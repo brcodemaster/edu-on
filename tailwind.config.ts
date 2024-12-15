@@ -20,6 +20,7 @@ export default {
 					primary: 'rgba(17, 17, 17, 54%)',
 					secondary: 'rgba(17, 17, 17, 4%)',
 				},
+				border: 'rgba(17, 17, 17, 0.09)',
 			},
 		},
 	},

@@ -1,3 +1,4 @@
+import { Footer, Header } from '@/components/shared'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -12,7 +13,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<>
+			<Header />
 			<main className='font-[gilroy]'>{children}</main>
+			<Footer />
 		</>
 	)
 }

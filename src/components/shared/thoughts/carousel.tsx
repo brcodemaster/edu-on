@@ -1,7 +1,7 @@
 'use client'
 
 import { thoughts } from '@/components/constants'
-import { ThoughtBlock } from '@/components/ui/thought-block'
+import { ThoughtBlock } from '@/components/ui'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 export const Carousel: React.FC = () => {

@@ -3,7 +3,7 @@ import { cva } from 'class-variance-authority'
 import { ButtonHTMLAttributes } from 'react'
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
-	variant: 'primary' | 'secondary' | 'grayscale'
+	variant: 'primary' | 'secondary' | 'grayscale' | 'white'
 	className?: string
 }
 
@@ -15,6 +15,8 @@ const buttonVariants = cva('py-[17px] duration-300 select-none', {
 			secondary: 'bg-blue-secondary px-10 text-blue-primary font-bold rounded-[14px] text-[17px]',
 			grayscale:
 				'bg-gray-secondary py-[12px] text-gray-dark rounded-[12px] px-[18px] hover:bg-gray-dark/10',
+			white:
+				'bg-white py-[30px] px-[56px] text-blue-primary rounded-[24px] hover:bg-white/60 font-[gilroy] font-bold text-lg',
 		},
 	},
 	defaultVariants: {

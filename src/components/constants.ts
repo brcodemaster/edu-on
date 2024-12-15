@@ -203,3 +203,80 @@ export const thoughts: {
 			'Platforma juda qulay. O‘qitishda samaradorlikni oshiruvchi bir qacha funksiyalarga ega. Narxlar ham qimmat emas.',
 	},
 ]
+
+export const footerNavigations = [
+	{
+		title: 'Veb Sayt',
+		children: [
+			{
+				title: 'Bosh Sahifa',
+				link: '/',
+			},
+			{
+				title: 'Kurslar',
+				link: '/courses',
+			},
+			{
+				title: 'FAQ',
+				link: '/faq',
+			},
+		],
+	},
+	{
+		title: "Ma'lumotlar",
+		children: [
+			{
+				title: 'Biz haqimizda',
+				link: '/about-us',
+			},
+			{
+				title: 'Foydalanish shartlari',
+				link: '/rules',
+			},
+			{
+				title: 'Privacy & Policy',
+				link: '/privacy-and-policy',
+			},
+		],
+	},
+	{
+		title: 'Manzillar',
+		children: [
+			{
+				title: "Toshkent sh. Yakkasaroy t. Shota Rustaveli 1-tor ko'chasi, 6-uy",
+				link: 'https://www.google.com/maps',
+			},
+			{
+				title: '+998 99 702 00 88',
+				link: 'tel:+998997020088',
+			},
+			{
+				title: 'Info@eduon.uz',
+				link: 'mailto:info@eduon.uz',
+			},
+		],
+	},
+]
+
+export const socialMedia = [
+	{
+		imgUrl: '/instagram.svg',
+		alt: 'instagramm link',
+		link: 'https://www.instagram.com/ravshanbekovvb',
+	},
+	{
+		imgUrl: '/telegram.svg',
+		alt: 'telegram link',
+		link: 'https://t.me/ravshanbekovvb',
+	},
+	{
+		imgUrl: '/facebook.svg',
+		alt: 'facebook link',
+		link: 'https://www.facebook.com/',
+	},
+	{
+		imgUrl: '/youtube.svg',
+		alt: 'youtube link',
+		link: 'https://www.youtube.com/',
+	},
+]

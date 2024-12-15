@@ -21,7 +21,7 @@ export const Header: React.FC = () => {
 								O&apos;z
 								<ArrowToBottom className='group-hover/language:rotate-180 duration-300 delay-100' />
 							</div>
-							<div className='opacity-0 invisible group-hover/language:opacity-100 group-hover/language:visible absolute top-4 right-0 shadow-lg p-5 rounded-[16px] font-medium duration-300 flex flex-col justify-center items-start gap-3'>
+							<div className='opacity-0 invisible group-hover/language:opacity-100 group-hover/language:visible absolute top-4 right-0 shadow-lg p-5 rounded-[16px] font-medium duration-300 flex flex-col justify-center items-start gap-3 bg-white'>
 								{languages &&
 									languages.map(language => (
 										<span
