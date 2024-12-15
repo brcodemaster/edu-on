@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer {
+	.custom-underline {
+		@apply relative after:content-[""] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:opacity-0 after:invisible hover:after:opacity-100 hover:after:visible hover:font-bold after:w-0 hover:after:w-[36px] after:mx-auto after:duration-200 after:rounded-[6px] after:bg-blue-primary;
+	}
+
+	.no-shifting {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.no-shifting::after {
+		content: attr(data-text);
+		height: 0;
+		font-weight: bold;
+		overflow: hidden;
+		visibility: hidden;
+	}
+
+	.overflow-x {
+		@apply overflow-x-auto overflow-y-clip w-full;
+	}
+	.overflow-x::-webkit-scrollbar {
+		@apply h-[5px] bg-blue-secondary;
+	}
+	.overflow-x::-webkit-scrollbar-thumb {
+		@apply bg-blue-primary rounded-xl;
+	}
+}
+/* 
+* {
+	border: 1px solid red;
+} */

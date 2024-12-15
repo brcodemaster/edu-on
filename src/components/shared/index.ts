@@ -1,0 +1,6 @@
+export * from './header'
+export * from './hero'
+export { TopCourses } from './top-courses'
+export { Speakers } from './speakers'
+export { NewCourses } from './new-courses'
+export { Courses } from './courses'
