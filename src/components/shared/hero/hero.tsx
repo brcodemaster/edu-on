@@ -1,4 +1,4 @@
-import { ActionButton, ArrowLeft, ArrowRight, Button, Play, Section, Title } from '../../ui'
+import { ActionButton, ArrowLeft, ArrowRight, Arrows, Button, Play, Section, Title } from '../../ui'
 import Image from 'next/image'
 import { SwitchCase } from './switch-case'
 
@@ -24,7 +24,6 @@ export const Hero: React.FC<Props> = ({ className }) => {
 				height={328}
 			/>
 			<div className='flex flex-col items-center relative w-[656px] max-mobile:w-[350px]'>
-				<ArrowLeft className='absolute top-[24px] -left-2 max-mobile:hidden' />
 				<div className='flex flex-col justify-center items-center w-full'>
 					<div className='flex flex-col justify-center items-center'>
 						<div className='leading-[65px] text-center w-full select-none'>
@@ -37,7 +36,7 @@ export const Hero: React.FC<Props> = ({ className }) => {
 							Ta'lim beruvchilar va ilm oluvchilar uchun onlayn platforma
 						</p>
 						<div className='flex justify-center items-center gap-9 pt-6'>
-							<Button>Kurslar</Button>
+							<Button variant='primary'>Kurslar</Button>
 							<a
 								href='/'
 								className='font-medium text-blue-primary text-lg flex items-center gap-2 hover:opacity-60 duration-300 text-center'
@@ -68,7 +67,7 @@ export const Hero: React.FC<Props> = ({ className }) => {
 						/>
 					</div>
 				</div>
-				<ArrowRight className='absolute top-[24px] -right-2 max-mobile:hidden' />
+				<Arrows top='24px' yPosition='0' className='max-mobile:hidden' />
 			</div>
 		</Section>
 	)

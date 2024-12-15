@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { ArrowToBottom, Button, SearchIcon, Section } from '@/components/ui'
+import { ArrowToBottom, Button, Logo, SearchIcon, Section } from '@/components/ui'
 import Link from 'next/link'
 import { languages } from '@/components/constants'
 import { Navigation } from './navigation'
@@ -10,7 +10,7 @@ export const Header: React.FC = () => {
 		<header className='py-6 sticky top-0 z-10 backdrop-blur-xl bg-white/30'>
 			<Section className='flex justify-between items-center gap-2'>
 				<Link href='/'>
-					<Image src='/logo.svg' alt='Logo-icon' width={120} height={62} priority />
+					<Logo />
 				</Link>
 				<Navigation className='max-tablet:hidden' />
 				<div className='flex items-center gap-[30px]'>

@@ -7,7 +7,7 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
 	className?: string
 }
 
-const buttonVariants = cva('py-[17px] duration-300', {
+const buttonVariants = cva('py-[17px] duration-300 select-none', {
 	variants: {
 		variant: {
 			primary:

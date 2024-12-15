@@ -51,7 +51,7 @@ export const CourseBlock: React.FC<Props> = ({
 					/>
 				</div>
 			</div>
-			<div className='flex justify-between gap-3 items-start pt-[18px] h-[56px]'>
+			<div className='flex justify-between gap-3 items-start pt-[18px] h-[56px] w-full'>
 				<p className=' text-gray-dark'>{title}</p>
 				<BookMark />
 			</div>

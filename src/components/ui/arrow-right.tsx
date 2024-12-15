@@ -1,12 +1,21 @@
 import { cn } from '@/lib/utils'
 
 type Props = {
+	top: string
+	right: string
+	index: number
 	className?: string
 }
 
-export const ArrowRight: React.FC<Props> = ({ className }) => {
+export const ArrowRight: React.FC<Props> = ({ top, right, index, className }) => {
 	return (
-		<span className={cn('active:scale-125 cursor-pointer duration-300', className)}>
+		<span
+			className={cn(
+				`active:scale-125 cursor-pointer duration-300 swiper-button-next-${index}`,
+				className
+			)}
+			style={{ top, right }}
+		>
 			<svg
 				width='18'
 				height='12'

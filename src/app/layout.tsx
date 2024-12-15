@@ -1,4 +1,5 @@
 import localFont from 'next/font/local'
+import 'swiper/css'
 import './globals.css'
 
 const gilroy = localFont({
