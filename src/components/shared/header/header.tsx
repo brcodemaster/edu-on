@@ -7,7 +7,7 @@ import { Navigation } from './navigation'
 
 export const Header: React.FC = () => {
 	return (
-		<header className='py-6 sticky top-0 z-10 backdrop-blur-xl bg-white/30'>
+		<header className='py-6 sticky top-0 z-10 backdrop-blur-xl bg-white/30 font-[gilroy]'>
 			<Section className='flex justify-between items-center gap-2'>
 				<Link href='/'>
 					<Logo />

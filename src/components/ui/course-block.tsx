@@ -1,8 +1,6 @@
 import Image from 'next/image'
-import { BookMark } from './bookmark'
-import { Star } from './star'
-import { View } from './view'
-import { Button } from './button'
+import { BookMark, Star, View } from './svgs'
+import { Button } from './buttons'
 
 type Props = {
 	imgUrl: string
@@ -41,7 +39,7 @@ export const CourseBlock: React.FC<Props> = ({
 					width={252}
 					height={168}
 				/>
-				<div className='w-[66x] h-[66px] pt-3 pl-3 bg-white rounded-2xl absolute bottom-0 right-0'>
+				<div className='w-[66x] h-[66px] pt-3 pl-3 bg-white rounded-tl-2xl -rounded-tr-2xl -rounded-bl-2xl absolute bottom-0 right-0'>
 					<Image
 						className='w-full h-full object-cover'
 						src={labelImg}

@@ -14,6 +14,8 @@ export const Courses: React.FC = () => {
 				</Title>
 			</div>
 			<div className='flex justify-center items-center pt-[76px] relative max-w-[880px] h-[230px] max-tablet:max-w-[440px] max-mobile:max-w-[220px]'>
+				<div className='absolute left-0 top-0 bg-gradient-to-r from-white to-transparent w-10 h-full z-[5]' />
+				<div className='absolute right-0 top-0 bg-gradient-to-l from-white to-transparent w-10 h-full z-[5]' />
 				<Carousel />
 				<Arrows top='50%' yPosition='-2rem' index={4} />
 			</div>

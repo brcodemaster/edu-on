@@ -26,6 +26,10 @@ export const languages = [
 		title: 'Русский',
 		label: 'Rus',
 	},
+	{
+		title: 'English',
+		label: 'Eng',
+	},
 ]
 
 export const active = 'Bosh sahifa'
@@ -77,15 +81,60 @@ export const newCourses: Courses[] = [
 		discountPrice: 8600000,
 	},
 	{
-		imgUrl: '/courses-photo-1.png',
-		alt: 'CRM',
-		labelImg: '/courses-label-1.png',
-		labelAlt: 'Abdukarimov',
-		title: 'Biznesda CRM sistemadan foydalanish',
-		rating: 4.2,
-		comments: 12965,
-		views: 54112,
-		price: 2750000,
+		imgUrl: '/courses-photo-5.png',
+		alt: 'Blog',
+		labelImg: '/courses-label-5.png',
+		labelAlt: 'label5',
+		title: 'Blog yuritishni 0 dan o’rganamiz. Amaliy',
+		rating: 4.9,
+		comments: 1483,
+		views: 4544,
+		price: 1000000,
+	},
+	{
+		imgUrl: '/courses-photo-6.png',
+		alt: 'UX/UI',
+		labelImg: '/courses-label-6.png',
+		labelAlt: 'label6',
+		title: 'UX/UI dizayn. Figmada boshlang’ich app dizayn',
+		rating: 4.4,
+		comments: 1548,
+		views: 12445,
+		price: 'Bepul',
+	},
+	{
+		imgUrl: '/courses-photo-7.png',
+		alt: 'SMM',
+		labelImg: '/courses-label-7.png',
+		labelAlt: 'label7',
+		title: 'SMM. Boshlang‘ich smm va intensiv dizayn',
+		rating: 3.9,
+		comments: 114588,
+		views: 214558,
+		price: 'Bepul',
+	},
+	{
+		imgUrl: '/courses-photo-8.png',
+		alt: 'English',
+		labelImg: '/courses-label-8.png',
+		labelAlt: 'label8',
+		title: 'Academic english. Upper intermediate level',
+		rating: 4.8,
+		comments: 158,
+		views: 954,
+		discountPrice: 4200000,
+		price: 3000000,
+	},
+	{
+		imgUrl: '/courses-photo-9.png',
+		alt: 'Telegram bot',
+		labelImg: '/courses-label-9.png',
+		labelAlt: 'label9',
+		title: 'Telegram bot haqida qisqacha. Kirish',
+		rating: 4.7,
+		comments: 6591,
+		views: 45478,
+		price: 'Bepul',
 	},
 ]
 
@@ -278,5 +327,70 @@ export const socialMedia = [
 		imgUrl: '/youtube.svg',
 		alt: 'youtube link',
 		link: 'https://www.youtube.com/',
+	},
+]
+
+export const categories = [
+	{
+		title: 'Barchasi',
+	},
+	{
+		title: 'Bepul',
+	},
+	{
+		title: "Zo'rlari",
+	},
+	{
+		title: 'Marketing',
+	},
+	{
+		title: 'Dasturlash',
+	},
+	{
+		title: 'Biznes',
+	},
+	{
+		title: 'Diniy',
+	},
+	{
+		title: 'Xotijiy tillar',
+	},
+	{
+		title: 'Menejment',
+	},
+]
+
+export const aboutUs = [
+	{
+		title: 'Umumiy qoidalar',
+		subtitle: `EduOn platformasida spiker bo'lish uchun ro'yxatdan o'tganingizda, ushbu spiker shartlariga rioya qilishga rozilik bildirasiz. Spiker sifatida siz to'g'ridan-to'g'ri EduOn, (O'zbekistondagi ta’lim platformasi) bilan shartnoma tuzasiz.
+			
+EduOn sizning veb sahifaga yuklangan shaxsiy ma’lumotlaringizni to’g’rilash yoki o’zgartirish huquqiga ega va har qanday holatda ham tarqalishidan himoya qilishni zimmasiga oladi. Kompaniya kontentni himoyalash maqsadida undan nusxa ko’chirish, yuklab olish va tarqatish holatlarini qat’iyan man etadi va veb sahifaga joylangan materiallar intellektual mulk agentligi tomonidan himoyalangan va EduOn ushbu mulk egasi hisoblanib undan foydalanish vakolatiga ega.`,
+	},
+	{
+		title: 'Umumiy qoidalar',
+		child: [
+			{
+				title:
+					'eduon.uz onlayn o’quv kursi bo’yicha xizmat ko’rsatish uchun tuzilgan mazkur shartnomada qo’llangan atamalar quyidagicha tushuniladi:',
+				subtitle: `«Shartnoma» - eduon.uz onlayn o’quv platformasi bo’yicha xizmat ko’rsatiluvchi amaldagi ushbu ommaviy oferta tushuniladi.
+
+«Ariza» - Foydalanuvchining eduon.uzdagi shaxsiy kabineti, ro’yxatdan o’tgan elektron pochtasi orqali qilgan murojaatlari.
+
+«eduon.uz» - Bilim beruvchi va bilim oluvchilarni bog’lovchi onlayn platforma.
+
+«O’quv kursi» - Video, audio vizual, matn fayllar tarzida bitta mavzu va nom bilan birlashtirilgan o’quv materiallarining to’plami. O’quv kurslar tavsifi saytda taqdim etiladi. O’quv kurslari tarkibiy o’zgartirib borilishi mumkin.
+
+«Shaxsiy kabinet» - Foydalanuvchining eduon.uz saytida ro’yxatdan o’tishi natijasida shakllangan, himoyalangan sahifalar to’plami. Oferta shartlari doirasida sayt funksiyalaridan foydalanishi mumkin bo’lgan sahifa. Shaxsiy kabinetga kirish foydalanuvchining saytda kirishda ko’rsatgan ma’lumotlari (login va parol) asosida amalga oshiriladi.
+
+«Tomonlar» - Foydalanuvchi va eduon.uz xizmati.
+
+«Hisob» - o’rnatilgan xizmat va topshirilgan mahsulot (o’quv materiallari) haqini to'lash uchun taqdim etilgan, shaxsiy kabinetdan yoki foydalanuvchining ro'yxatdan o’tish vaqtidagi elektron pochtasiga yuborilgan to’lov xabarnomasi.
+
+«Xizmatlar» - eduon.uz saytida dasturlashni o’rgatish bo’yicha o’quv materiallarini onlayn taqdim etish va shu sayt orqali ko’rsatiladigan boshqa xizmatlar.
+
+2.2. Atamalar bo’yicha tushunmovchilik yuzaga kelganda O’zbekiston Respublikasining amaldagi qonunlari va Internetning texnik talablariga muvofiq hal qilinadi.`,
+			},
+		],
 	},
 ]

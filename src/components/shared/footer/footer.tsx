@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export const Footer: React.FC = () => {
 	return (
-		<Section className='flex flex-col pt-[100px] max-mobile:pt-[30px]'>
+		<Section className='flex flex-col pt-[100px] max-mobile:pt-[30px] font-[gilroy]'>
 			<div className='flex gap-[172px] pb-[50px] max-tablet:flex-col max-tablet:gap-[50px]'>
 				<div className='flex flex-col max-tablet:flex-row max-tablet:gap-5 max-mobile:flex-col max-mobile:justify-center max-mobile:items-center'>
 					<Logo />

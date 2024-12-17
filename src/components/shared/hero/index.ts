@@ -1,2 +1,2 @@
 export { Hero } from './hero'
-export { SwitchCase } from './switch-case'
+export { SwitchCase } from '../../ui/switch-case'

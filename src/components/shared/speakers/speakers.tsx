@@ -11,6 +11,8 @@ export const Speakers: React.FC = () => {
 				</Title>
 			</div>
 			<div className='flex justify-center items-center pt-[36px] relative max-w-[850px] h-[330px] max-tablet:max-w-[430px] max-mobile:max-w-[220px]'>
+				<div className='absolute left-0 top-0 bg-gradient-to-r from-white to-transparent w-10 h-full z-[5]' />
+				<div className='absolute right-0 top-0 bg-gradient-to-l from-white to-transparent w-10 h-full z-[5]' />
 				<Carousel />
 				<Arrows top='50%' yPosition='-2rem' index={3} />
 			</div>

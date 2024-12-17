@@ -14,6 +14,9 @@ export const Thoughts: React.FC = () => {
 				className='flex justify-center items-center h-[278px] pt-[36px] relative max-w-[840px]
 			max-tablet:max-w-[580px] max-mobile:max-w-[300px] px-4'
 			>
+				<div className='absolute left-4 top-0 bg-gradient-to-r from-white to-transparent w-10 h-full z-[5]' />
+				<div className='absolute right-4 top-0 bg-gradient-to-l from-white to-transparent w-10 h-full z-[5]' />
+
 				<Carousel />
 				<Arrows top='35%' yPosition='-10px' index={5} />
 			</div>

@@ -1,12 +1,15 @@
-import { ActionButton, ArrowLeft, ArrowRight, Arrows, Button, Play, Section, Title } from '../../ui'
+import {
+	ActionButton,
+	Arrows,
+	Button,
+	Play,
+	Section,
+	SwitchCase,
+	TitleWithDescription,
+} from '../../ui'
 import Image from 'next/image'
-import { SwitchCase } from './switch-case'
 
-type Props = {
-	className?: string
-}
-
-export const Hero: React.FC<Props> = ({ className }) => {
+export const Hero: React.FC = () => {
 	return (
 		<Section className='flex justify-center pt-[106px] relative'>
 			<Image
@@ -26,15 +29,12 @@ export const Hero: React.FC<Props> = ({ className }) => {
 			<div className='flex flex-col items-center relative w-[656px] max-mobile:w-[350px]'>
 				<div className='flex flex-col justify-center items-center w-full'>
 					<div className='flex flex-col justify-center items-center'>
-						<div className='leading-[65px] text-center w-full select-none'>
-							<Title size='xxl' className='w-full'>
-								Onlayn bilim
-								<p className='font-[samsungSharp] text-[36px] text-black'>platformasi</p>
-							</Title>
-						</div>
-						<p className='font-medium text-gray-primary text-center w-full'>
-							Ta'lim beruvchilar va ilm oluvchilar uchun onlayn platforma
-						</p>
+						<TitleWithDescription
+							size='xxl'
+							title='Onlayn bilim'
+							subTitle='platformasi'
+							description="Ta'lim beruvchilar va ilm oluvchilar uchun onlayn platforma"
+						/>
 						<div className='flex justify-center items-center gap-9 pt-6'>
 							<Button variant='primary'>Kurslar</Button>
 							<a
@@ -67,7 +67,7 @@ export const Hero: React.FC<Props> = ({ className }) => {
 						/>
 					</div>
 				</div>
-				<Arrows top='24px' yPosition='0' className='max-mobile:hidden' />
+				<Arrows top='24px' yPosition='0' className='max-mobile:hidden' index={6} />
 			</div>
 		</Section>
 	)

@@ -7,7 +7,7 @@ export default {
 			'mobile-sm': '500px',
 			mobile: '768px',
 			tablet: '1024px',
-			desktop: '1150px',
+			desktop: '1400px',
 		},
 		extend: {
 			colors: {
@@ -18,7 +18,7 @@ export default {
 				gray: {
 					dark: 'rgba(17, 17, 17, 74%)',
 					primary: 'rgba(17, 17, 17, 54%)',
-					secondary: 'rgba(17, 17, 17, 4%)',
+					secondary: 'rgba(17, 17, 17, 10%)',
 				},
 				border: 'rgba(17, 17, 17, 0.09)',
 			},

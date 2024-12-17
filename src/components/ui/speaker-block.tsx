@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import { Star } from './star'
-import { Button } from './button'
+import { Star } from './svgs'
+import { Button } from './buttons'
 
 type Props = {
 	name: string

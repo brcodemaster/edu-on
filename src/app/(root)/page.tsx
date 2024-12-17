@@ -1,4 +1,4 @@
-import { Courses, Footer, Header, Hero, Speakers, TopCourses } from '@/components/shared'
+import { Courses, Hero, Speakers, TopCourses } from '@/components/shared'
 import { NewCourses } from '@/components/shared/new-courses/new-courses'
 import { SignUp } from '@/components/shared/sign up'
 import { Superiority } from '@/components/shared/superiority'
