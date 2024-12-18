@@ -12,7 +12,7 @@ export const SwitchCase: React.FC<Props> = ({ leftSide, rightSide }) => {
 	const [switched, isSwitched] = useState(false)
 
 	return (
-		<div className='text-gray-primary font-medium flex items-center gap-9 whitespace-nowrap pt-[124px] text-[24px] max-mobile:flex-col max-tablet:pt-[80px]'>
+		<div className='text-gray-primary font-medium flex justify-center items-center gap-9 whitespace-nowrap pt-[124px] text-[24px] max-mobile:flex-col max-tablet:pt-[80px]'>
 			<div className={cn(switched && 'text-blue-primary duration-300')}>{leftSide}</div>
 			<div
 				className='w-[54px] h-[24px] bg-blue-primary rounded-full cursor-pointer relative'

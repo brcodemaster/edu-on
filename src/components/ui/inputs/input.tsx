@@ -1,4 +1,6 @@
-type Props = {
+import { InputHTMLAttributes } from 'react'
+
+type Props = InputHTMLAttributes<Props> & {
 	placeholder: string
 }
 

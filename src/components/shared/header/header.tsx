@@ -1,14 +1,14 @@
 import Image from 'next/image'
 
-import { ArrowToBottom, Button, Logo, SearchIcon, Section } from '@/components/ui'
+import { ArrowToBottom, Button, Container, Logo, SearchIcon, Section } from '@/components/ui'
 import Link from 'next/link'
 import { languages } from '@/components/constants'
 import { Navigation } from './navigation'
 
 export const Header: React.FC = () => {
 	return (
-		<header className='py-6 sticky top-0 z-10 backdrop-blur-xl bg-white/30 font-[gilroy]'>
-			<Section className='flex justify-between items-center gap-2'>
+		<header className='py-6 sticky top-0 z-10 backdrop-blur-xl bg-white/30 font-[gilroy] flex items-center'>
+			<Container className='flex justify-between items-center gap-2 w-full'>
 				<Link href='/'>
 					<Logo />
 				</Link>
@@ -38,7 +38,7 @@ export const Header: React.FC = () => {
 						Kirish
 					</Button>
 				</div>
-			</Section>
+			</Container>
 		</header>
 	)
 }

@@ -363,34 +363,143 @@ export const categories = [
 export const aboutUs = [
 	{
 		title: 'Umumiy qoidalar',
-		subtitle: `EduOn platformasida spiker bo'lish uchun ro'yxatdan o'tganingizda, ushbu spiker shartlariga rioya qilishga rozilik bildirasiz. Spiker sifatida siz to'g'ridan-to'g'ri EduOn, (O'zbekistondagi ta’lim platformasi) bilan shartnoma tuzasiz.
-			
-EduOn sizning veb sahifaga yuklangan shaxsiy ma’lumotlaringizni to’g’rilash yoki o’zgartirish huquqiga ega va har qanday holatda ham tarqalishidan himoya qilishni zimmasiga oladi. Kompaniya kontentni himoyalash maqsadida undan nusxa ko’chirish, yuklab olish va tarqatish holatlarini qat’iyan man etadi va veb sahifaga joylangan materiallar intellektual mulk agentligi tomonidan himoyalangan va EduOn ushbu mulk egasi hisoblanib undan foydalanish vakolatiga ega.`,
+		subtitle: `EduOn platformasida spiker bo'lish uchun ro'yxatdan o'tganingizda, ushbu spiker shartlariga rioya qilishga rozilik bildirasiz. Spiker sifatida siz to'g'ridan-to'g'ri EduOn, (O'zbekistondagi ta’lim platformasi) bilan shartnoma tuzasiz. EduOn sizning veb sahifaga yuklangan shaxsiy ma’lumotlaringizni to’g’rilash yoki o’zgartirish huquqiga ega va har qanday holatda ham tarqalishidan himoya qilishni zimmasiga oladi. Kompaniya kontentni himoyalash maqsadida undan nusxa ko’chirish, yuklab olish va tarqatish holatlarini qat’iyan man etadi va veb sahifaga joylangan materiallar intellektual mulk agentligi tomonidan himoyalangan va EduOn ushbu mulk egasi hisoblanib undan foydalanish vakolatiga ega.`,
 	},
 	{
-		title: 'Umumiy qoidalar',
-		child: [
+		title: 'Atamalar',
+		children: [
 			{
 				title:
-					'eduon.uz onlayn o’quv kursi bo’yicha xizmat ko’rsatish uchun tuzilgan mazkur shartnomada qo’llangan atamalar quyidagicha tushuniladi:',
-				subtitle: `«Shartnoma» - eduon.uz onlayn o’quv platformasi bo’yicha xizmat ko’rsatiluvchi amaldagi ushbu ommaviy oferta tushuniladi.
-
-«Ariza» - Foydalanuvchining eduon.uzdagi shaxsiy kabineti, ro’yxatdan o’tgan elektron pochtasi orqali qilgan murojaatlari.
-
-«eduon.uz» - Bilim beruvchi va bilim oluvchilarni bog’lovchi onlayn platforma.
-
-«O’quv kursi» - Video, audio vizual, matn fayllar tarzida bitta mavzu va nom bilan birlashtirilgan o’quv materiallarining to’plami. O’quv kurslar tavsifi saytda taqdim etiladi. O’quv kurslari tarkibiy o’zgartirib borilishi mumkin.
-
-«Shaxsiy kabinet» - Foydalanuvchining eduon.uz saytida ro’yxatdan o’tishi natijasida shakllangan, himoyalangan sahifalar to’plami. Oferta shartlari doirasida sayt funksiyalaridan foydalanishi mumkin bo’lgan sahifa. Shaxsiy kabinetga kirish foydalanuvchining saytda kirishda ko’rsatgan ma’lumotlari (login va parol) asosida amalga oshiriladi.
-
-«Tomonlar» - Foydalanuvchi va eduon.uz xizmati.
-
-«Hisob» - o’rnatilgan xizmat va topshirilgan mahsulot (o’quv materiallari) haqini to'lash uchun taqdim etilgan, shaxsiy kabinetdan yoki foydalanuvchining ro'yxatdan o’tish vaqtidagi elektron pochtasiga yuborilgan to’lov xabarnomasi.
-
-«Xizmatlar» - eduon.uz saytida dasturlashni o’rgatish bo’yicha o’quv materiallarini onlayn taqdim etish va shu sayt orqali ko’rsatiladigan boshqa xizmatlar.
-
-2.2. Atamalar bo’yicha tushunmovchilik yuzaga kelganda O’zbekiston Respublikasining amaldagi qonunlari va Internetning texnik talablariga muvofiq hal qilinadi.`,
+					'eduon.uz onlayn o’quv kursi bo’yicha xizmat ko’rsatish uchun tuzilgan mazkur shartnomada qo’llangan atamalar quyidagicha tushuniladi',
+				description:
+					" «Shartnoma» - eduon.uz onlayn o’quv platformasi bo’yicha xizmat ko’rsatiluvchi amaldagi ushbu ommaviy oferta tushuniladi.«Ariza» - Foydalanuvchining eduon.uzdagi shaxsiy kabineti, ro’yxatdan o’tgan elektron pochtasi orqali qilgan murojaatlari.«eduon.uz» - Bilim beruvchi va bilim oluvchilarni bog’lovchi onlayn platforma.«O’quv kursi» - Video, audio vizual, matn fayllar tarzida bitta mavzu va nom bilan birlashtirilgan o’quv materiallarining to’plami. O’quv kurslar tavsifi saytda taqdim etiladi. O’quv kurslari tarkibiy o’zgartirib borilishi mumkin.«Shaxsiy kabinet» - Foydalanuvchining eduon.uz saytida ro’yxatdan o’tishi natijasida shakllangan, himoyalangan sahifalar to’plami. Oferta shartlari doirasida sayt funksiyalaridan foydalanishi mumkin bo’lgan sahifa. Shaxsiy kabinetga kirish foydalanuvchining saytda kirishda ko’rsatgan ma’lumotlari (login va parol) asosida amalga oshiriladi.«Tomonlar» - Foydalanuvchi va eduon.uz xizmati.«Hisob» - o’rnatilgan xizmat va topshirilgan mahsulot (o’quv materiallari) haqini to'lash uchun taqdim etilgan, shaxsiy kabinetdan yoki foydalanuvchining ro'yxatdan o’tish vaqtidagi elektron pochtasiga yuborilgan to’lov xabarnomasi.«Xizmatlar» - eduon.uz saytida dasturlashni o’rgatish bo’yicha o’quv materiallarini onlayn taqdim etish va shu sayt orqali ko’rsatiladigan boshqa xizmatlar.2.2. Atamalar bo’yicha tushunmovchilik yuzaga kelganda O’zbekiston Respublikasining amaldagi qonunlari va Internetning texnik talablariga muvofiq hal qilinadi",
+			},
+			{
+				title:
+					'Atamalar bo’yicha tushunmovchilik yuzaga kelganda O’zbekiston Respublikasining amaldagi qonunlari va Internetning texnik talablariga muvofiq hal qilinadi.',
 			},
 		],
+	},
+	{
+		title: 'Shartnoma tuzish tartibi',
+		children: [
+			{
+				title:
+					'O’zbekiston Respublikasi Fuqarolik Kodeksining 370-moddasiga asosan foydalanuvchi tomonidan quyidagi harakatlarning amalga oshirilishi Mazkur taklifni to’laligicha qabul qilish hisoblanadi:',
+			},
+			{
+				title: 'eduon.uz saytida ro’yxatdan o’tish',
+			},
+			{
+				title: 'Tanlagan o’quv kursi uchun to’lovni amalga oshirish.',
+			},
+		],
+	},
+	{
+		title: 'Tomonlarning huquq va majburiyatlari',
+		children: [
+			{
+				title: 'Spikerning majburiyatlari',
+				description:
+					"Spiker sifatida siz o'zingiz joylashtirgan barcha kontent uchun, shu jumladan ma'ruzalar, viktorinalar, kodlash mashqlari, amaliy mashg'ulotlar, topshiriqlar, manbalar, javoblar, kursga kirish sahifasi kontenti va e'lonlari (\"Taqdim etilgan kontent\") uchun javobgarsiz.",
+			},
+			{
+				title: 'Siz quyidagilarni taqdim etasiz va kafolat berasiz:',
+				description:
+					"Sizning kontentingiz har qanday uchinchi tomonning intellektual mulk huquqlarini buzmaydi yoki o'zlashtirmaydi. Siz o'zingizning taqdim etilgan kontentingiz va xizmatlardan foydalanish orqali siz taklif qilayotgan xizmatlarni o'rgatish va taklif qilish uchun kerakli malaka, ma'lumot va tajribaga (shu jumladan ta'lim, o'qitish, bilim va mahorat to'plamlariga) egasiz.Siz o'zingizning faoliyat sohangiz standartlariga va umuman ko'rsatma xizmatlariga mos keladigan xizmat sifatini ta'minlaysiz.",
+			},
+			{
+				title: 'Siz shunday qilmasligingizga kafolat berasiz:',
+				description:
+					"Har qanday noo'rin, haqoratli, irqchi, nafratlanuvchi, seksistik, pornografik, yolg'on, chalg'ituvchi, noto'g'ri, yoki tuhmat qilingan kontent yoki ma'lumotlarni joylashtirish yoki taqdim etish. Xizmatlar orqali yoki biron bir foydalanuvchiga istalgan yoki ruxsatsiz reklama, reklama materiallari, keraksiz pochta xabarlari, spam yoki boshqa iltimosnoma shakllarini (tijorat yoki boshqa) yuborish yoki uzatish.Xizmatlardan, o'quvchilarga o'qitish xizmatlarini ko'rsatishdan boshqa maqsadlar uchun foydalanish. Boshqa shaxsni taqlid qilish yoki boshqa shaxsning hisob raqamiga ruxsatsiz kirish huquqini olish. Boshqa spikerlarga o'zlarining xizmatlarini yoki kurslarini taqdim etishlariga aralashish yoki boshqa yo'l bilan to'sqinlik qilish. EduOn resurslaridan, shu jumladan qo'llab-quvvatlash xizmatlaridan suiiste'mol qilish.",
+			},
+		],
+	},
+	{
+		title: 'Ishonch va havsizlik',
+		children: [
+			{
+				title: 'Ishonch va xavfsizlik siyosati',
+				description:
+					"Biz kurslarni olib tashlash, to'lovlarni to'xtatib turish va / yoki spikerlarni har qanday sababga ko'ra har qanday vaqtda, oldindan ogohlantirmasdan, shu jumladan quyidagi hollarda olib tashlash huquqini o'zida saqlab qolamiz: o'qituvchi yoki kurs bizning siyosatimizga yoki qonuniy shartlariga (shu jumladan, foydalanish shartlariga) mos kelmasa. Kurs bizning sifat standartlarimizdan pastroq bo'lsa yoki talabalar tajribasiga salbiy ta'sir ko'rsatsa. Spiker EduOn’ga salbiy ta'sir ko'rsatishi yoki EduOn’ni jamoat obro'siga, nafratiga, janjaliga yoki masxara qilishiga olib kelishi mumkin bo'lgan xatti-harakatlarni amalga oshirsa. Spiker EduOn siyosatini buzgan marketolog yoki boshqa biznes sheriklarining xizmatlarini jalb qilsa;",
+			},
+			{
+				title: 'Boshqa foydalanuvchilar bilan aloqalar',
+				description:
+					"Spikerlar talabalar bilan to'g'ridan-to'g'ri shartnomaviy munosabatlarga ega emaslar, shuning uchun siz talabalar to'g'risida faqatgina xizmatlar orqali sizga taqdim etiladigan ma'lumotlardir. Siz olgan ma'lumotlaringizdan EduOn platformasida o'sha talabalarga o'z xizmatlaringizni ko'rsatishdan boshqa maqsadda foydalanmasligingizga va qo'shimcha shaxsiy ma'lumotlar so'ramasligingizga yoki talabalarning shaxsiy ma'lumotlarini EduOn platformasidan tashqarida saqlamasligingizga rozilik bildirasiz. Siz EduOn kompaniyasiga talabalarning shaxsiy ma'lumotlaridan foydalanish bilan bog'liq har qanday da'volardan tovon puli to'laysiz.",
+			},
+		],
+	},
+	{
+		title: 'Narxlar',
+		subtitle:
+			'Narxlar EduOn tomonidan qat’iy o’rnatilgan 5$-200$ gacha bo’lgan tartibda belgilanishi lozim. Ushbu shartlar buzilishi ogohlantirish, keyinchalik tovon puli to’lanishiga olib keladi.',
+	},
+	{
+		title: "To'lovlar",
+		children: [
+			{
+				title: 'Daromad ulushi',
+				description:
+					'Daromad ulushlari EduOn ma’muriyati tomonidan 70% (Spiker) va 30% (EduOn) etib belgilangan.',
+			},
+			{
+				title: "To'lovlarni qabul qilish",
+				description:
+					"Sizga o'z vaqtida to'lashimiz uchun siz Click yoki PayMe hisob qaydnomangizga egalik qilishingiz va sizning akkauntingiz bilan bog'liq to'g'ri elektron pochta xabarlarini bizga yetkazishingiz kerak. Biz aniqlangan firibgarliklar, intellektual mulk huquqlari buzilganligi yoki boshqa qonun hujjatlari buzilgan taqdirda biz mablag' to'lamaslik huquqini o'zimizda saqlab qolamiz.",
+			},
+			{
+				title: 'Pulni qaytarish',
+				description:
+					"Spikerlar foydalanish shartlari bo'yicha pul mablag'lari qaytarib beriladigan operatsiyalardan daromad olmaydilar. Agar talaba biz tegishli spikerning to'lovini to'laganimizdan keyin pulni qaytarib berishni so'rasa, biz (1) o'qituvchiga yuborilgan keyingi to'lovdan qaytariladigan summani ushlab qolish huquqiga egamiz yoki (2) qo'shimcha to'lovlar olinmasa, spikerdan to'lovlar qaytariladigan summani qoplash uchun yetarli bo’lmasa, spikerdan qaytarilish zarur bo’lgan har qanday summani qaytarishni talab qilinadi.",
+			},
+		],
+	},
+	{
+		title: 'Savdo belgisi',
+		subtitle:
+			'Quyida keltirilgan talablarga rioya qilgan holda, biz sizga vakolat bergan joyda bizning savdo belgilarimizdan foydalanishingiz mumkin.',
+		children: [
+			{
+				title: 'Siz foydalanishingiz mumkin',
+				description:
+					"Biz e'lon qilishimiz mumkin bo'lgan har qanday ko'rsatmalarda biz sizga taqdim etadigan savdo belgilarimiz rasmlaridan foydalaning. Bizning savdo belgilarimizdan faqat EduOn kurslarini reklama qilish va sotish yoki EduOn’da ishtirok etish bilan bog'liq holda foydalaning. Sizdan foydalanishni to'xtatishni so'rasak, darhol bajaring",
+			},
+			{
+				title: 'Siz qilmasligingiz kerak:',
+				description:
+					"Savdo belgilarimizdan chalg'ituvchi yoki kamsituvchi usulda foydalanish. Savdo belgilarimizdan sizning kurslaringiz yoki xizmatlaringizni qo'llab-quvvatlashimiz, homiylik qilishimiz yoki tasdiqlashimizni anglatadigan tarzda foydalanish. Savdo belgilarimizdan amaldagi qonunchilikka xilof ravishda yoki odobsiz, nomaqbul yoki noqonuniy mavzu yoki materiallar bilan bog'liq holda foydalanish.",
+			},
+		],
+	},
+	{
+		title: "Akkauntingizni o'chirish",
+		subtitle:
+			"Akkauntingizni o'chirib tashlamasdan oldin biz sizga qolgan barcha rejalashtirilgan to'lovlarni amalga oshirish uchun tijorat maqsadlarida harakat qilamiz. Agar siz talabalar ilgari sizning kurslaringizga yozilgan bo'lsa, sizning ismingiz va yuborilgan kontentga sizning akkauntingiz o'chirilgandan so'ng ushbu talabalar kirish huquqini saqlab qolishlarini tushunasiz. Agar sizga yordam kerak bo'lsa yoki hisobingizni o'chirishda qiyinchiliklarga duch kelsangiz, bizni qo'llab-quvvatlash markazimiz orqali bog'lanishingiz mumkin.",
+	},
+	{
+		title: 'Turli xil huquqiy atamalar:',
+		children: [
+			{
+				title: 'Ushbu shartlarni yangilash',
+				description:
+					"Vaqti-vaqti bilan biz ushbu shartlarni amaliyotimizni aniqlashtirish yoki yangi yoki turli xil amaliyotlarni aks ettirish uchun yangilashimiz mumkin (masalan, yangi xususiyatlarni qo'shganda) va EduOn ushbu shartlarni o'zgartirish va / yoki o'zgartirish kiritish huquqini o'zida saqlab qoladi. Har qanday holatda. Agar biz biron bir muhim o'zgarishlarni amalga oshirsak, biz sizning akkauntingizda ko'rsatilgan elektron pochta manziliga xabar beramiz. O'zgartirishlar, agar boshqacha ko'rsatilmagan bo'lsa, e'lon qilingan kundan boshlab kuchga kiradi. O'zgarishlar kuchga kirgandan keyin bizning xizmatlarimizdan doimiy ravishda foydalanishingiz ushbu o'zgarishlarni qabul qilishingizni anglatadi. Har qanday qayta ko'rib chiqilgan shartlar avvalgi shartlarning o'rnini bosadi.",
+			},
+			{
+				title: 'Tarjimalar',
+				description:
+					'Ushbu shartlarning o’zbek tilidan boshqa har qanday versiyasi qulaylik uchun taqdim etiladi.',
+			},
+			{
+				title: 'Oramizdagi munosabatlar',
+				description:
+					"Siz va biz hech qanday qo'shma korxona, sheriklik, ish bilan ta'minlash, pudratchi yoki agentlik munosabatlari oramizda mavjud emasligiga qo'shilamiz.",
+			},
+		],
+	},
+	{
+		title: "Biz bilan qanday bog'lanish mumkin",
+		subtitle:
+			"Biz bilan bog'lanishning eng yaxshi usuli - qo'llab-quvvatlash guruhimizga murojaat qilishdir. Sizning savollaringiz, tashvishlaringiz va bizning xizmatlarimiz haqidagi fikr-mulohazalaringizni eshitishga tayyormiz.",
 	},
 ]

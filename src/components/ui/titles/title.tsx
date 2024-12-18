@@ -11,6 +11,10 @@ const titleVariants = cva('', {
 		size: {
 			xxl: 'text-[72px] font-[samsungSharp] text-blue-primary font-black',
 			xl: 'text-[46px] font-[samsungSharp] text-black font-black',
+			lg: 'text-[30px] font-[samsungSharp] text-blue-primary font-black',
+			md: 'text-[18px] font-[samsungSharp] text-black/80 font-black',
+			sm: 'text-[24px] font-[samsungSharp] text-black font-black',
+			xs: 'text-[24px] font-[samsungSharp] text-black font-black',
 		},
 	},
 	defaultVariants: {
@@ -30,5 +34,5 @@ const tagMapBySize = {
 export const Title: React.FC<React.PropsWithChildren<Props>> = ({ size, children, className }) => {
 	const Tag = tagMapBySize[size] as keyof JSX.IntrinsicElements
 
-	return <Tag className={titleVariants({ size: 'xxl', className })}>{children}</Tag>
+	return <Tag className={titleVariants({ size, className })}>{children}</Tag>
 }
