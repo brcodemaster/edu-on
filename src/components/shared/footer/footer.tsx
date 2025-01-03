@@ -3,8 +3,11 @@ import { Navigation } from './navigation'
 import { SwitchButton } from './switch-button'
 import { socialMedia } from '@/components/constants'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 export const Footer: React.FC = () => {
+	const t = useTranslations()
+
 	return (
 		<Section className='flex flex-col pt-[100px] max-mobile:pt-[30px] font-[gilroy]'>
 			<div className='flex gap-[172px] pb-[50px] max-tablet:flex-col max-tablet:gap-[50px]'>
@@ -17,11 +20,11 @@ export const Footer: React.FC = () => {
 								<a
 									key={media.alt}
 									href={media.link}
-									className='w-6 h-6 flex items-center grayscale'
+									className='flex justify-center items-center grayscale border rounded-full p-2 hover:bg-gray-primary/10 duration-300'
 									target='_blank'
 									rel='noopener noreferrer'
 								>
-									<img className='opacity-50' src={media.imgUrl} alt={media.alt} />
+									<i className={`bx ${media.icon} opacity-50 bx-sm`}></i>
 								</a>
 							))}
 					</div>
@@ -32,9 +35,9 @@ export const Footer: React.FC = () => {
 				<div className='max-w-[307px] mx-auto text-center'>
 					©{' '}
 					<Link href='/' className='text-blue-primary max-mobile:contents'>
-						EduOn.
+						{t('edu')}.
 					</Link>{' '}
-					Barcha huquqlar himoyalangan
+					{t('AllRights')}
 				</div>
 			</div>
 		</Section>

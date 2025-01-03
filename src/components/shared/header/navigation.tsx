@@ -1,9 +1,10 @@
 'use client'
 
 import { menus } from '@/components/constants'
+import { Link } from '@/i18n/routing'
 import { cn } from '@/lib/utils'
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useTranslations } from 'next-intl'
 
 type Props = {
 	className?: string
@@ -11,7 +12,9 @@ type Props = {
 
 export const Navigation: React.FC<Props> = ({ className }) => {
 	const path = usePathname()
-	const active = '/' + path.split('/')[1]
+	const active = `/${path.split('/').slice(2)}`
+
+	const t = useTranslations('navigation')
 
 	return (
 		<nav className={cn(className)}>
@@ -32,7 +35,7 @@ export const Navigation: React.FC<Props> = ({ className }) => {
 								data-text={menuItem.title}
 								className='no-shifting group-hover:font-bold'
 							>
-								{menuItem.title}
+								{t(`${menuItem.title}`)}
 							</Link>
 						</li>
 					))}

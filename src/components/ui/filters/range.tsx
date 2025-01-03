@@ -1,25 +1,47 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { DualRangeSlider } from '@/components/core/slider'
+import { useTranslations } from 'next-intl'
+import { useSearchParams } from 'next/navigation'
+import { FiltersProps } from './filter'
 
-export const Range: React.FC = () => {
-	const [values, setValues] = useState([50000, 10000000])
+type Props = {
+	range: (
+		value: string,
+		filterType: keyof FiltersProps,
+		method: 'add' | 'delete',
+		isChecked?: boolean,
+		price?: { priceFrom: number; priceTo: number }
+	) => void
+}
+
+export const Range: React.FC<Props> = ({ range }) => {
+	const t = useTranslations()
+	const searchParams = useSearchParams()
+	const [prices, setPrices] = useState<number[]>([
+		Number(searchParams.get('priceFrom')),
+		Number(searchParams.get('priceTo')) > 0 ? Number(searchParams.get('priceTo')) : 10000000,
+	])
+
+	useEffect(() => {
+		range('Price of course', 'price', 'add', false, { priceFrom: prices[0], priceTo: prices[1] })
+	}, [prices, range])
 
 	return (
 		<>
 			<div className='flex flex-col mx-auto gap-1 pt-6 pb-6 px-2 border-b-[2px] border-gray-secondary'>
-				<span className='text-gray-primary font-medium pb-2'>Narxlar:</span>
+				<span className='text-gray-primary font-medium pb-2'>{t('prices')}</span>
 				<DualRangeSlider
-					value={values}
-					onValueChange={setValues}
+					value={prices}
+					onValueChange={setPrices}
 					min={50000}
 					max={10000000}
 					step={50000}
 				/>
 				<div className='flex justify-between items-center pt-2'>
-					<span>{values[0]} so&apos;m</span>
-					<span>{values[1]} so&apos;m</span>
+					<span>{prices[0] > 0 ? prices[0] : 50000} so&apos;m</span>
+					<span>{prices[1]} so&apos;m</span>
 				</div>
 			</div>
 		</>

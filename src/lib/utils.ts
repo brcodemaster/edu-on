@@ -1,7 +1,9 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+
 import { clsx, type ClassValue } from 'clsx'
 import { twMerge } from 'tailwind-merge'
-import SwiperCore from 'swiper'
 import { Navigation, Pagination } from 'swiper/modules'
+import SwiperCore from 'swiper'
 
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs))

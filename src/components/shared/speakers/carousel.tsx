@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 export const Carousel: React.FC = () => {
 	return (
 		<Swiper
-			className='w-full h-full px-4'
+			className='w-full h-full px-5 max-mobile:px-4'
 			loop={false}
 			spaceBetween={18}
 			slidesPerView='auto'

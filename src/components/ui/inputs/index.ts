@@ -1,2 +1,2 @@
 export { Input } from './input'
-export { Checbox } from './checkbox'
+export { Checkbox } from './checkbox'

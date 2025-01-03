@@ -2,9 +2,11 @@
 
 import { cn } from '@/lib/utils'
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
 
 export const SwitchButton: React.FC = () => {
 	const [active, setActive] = useState('passive')
+	const t = useTranslations()
 
 	return (
 		<div className='w-[260px] h-[63px] rounded-[18px] flex justify-center items-center text-black border-[2px] border-border mt-7 max-tablet:mt-0'>
@@ -17,7 +19,7 @@ export const SwitchButton: React.FC = () => {
 					setActive('passive')
 				}}
 			>
-				O&apos;quvchi
+				{t('pupil')}
 			</span>
 			<span
 				className={cn(
@@ -28,7 +30,7 @@ export const SwitchButton: React.FC = () => {
 					setActive('active')
 				}}
 			>
-				Spiker
+				{t('speaker')}
 			</span>
 		</div>
 	)

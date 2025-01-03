@@ -1,31 +1,37 @@
-import { Checbox } from '../inputs'
+import db from '../../../../db/db.json'
+import { useTranslations } from 'next-intl'
+import { FilterCheckbox } from '../inputs/filter-checkbox'
+import { FiltersProps } from './filter'
 
-export const Slices: React.FC = () => {
+type Props = {
+	defaults: FiltersProps
+	onChange: (
+		value: string,
+		filterType: keyof FiltersProps,
+		method: 'add' | 'delete',
+		isChecked?: boolean
+	) => void
+}
+
+export const Slices: React.FC<Props> = ({ onChange, defaults }) => {
+	const t = useTranslations('slicesBlock')
+
+	const filters = db.filters
+
 	return (
 		<div className='pt-6 border-t-[2px] border-gray-secondary mt-6'>
-			<span className='text-gray-primary font-medium'>Bo&apos;limlar</span>
-			<label className='flex justify-between items-center select-none pt-5 cursor-pointer'>
-				<span className='text-gray-primary/75 font-medium flex items-center gap-1'>Frontend</span>
-				<Checbox name='4.5-5' />
-			</label>
-			<label className='flex justify-between items-center select-none pt-3 cursor-pointer'>
-				<span className='text-gray-primary/75 font-medium flex items-center gap-1'>Backend</span>
-				<Checbox name='4.5-5' />
-			</label>
-			<label className='flex justify-between items-center select-none pt-3 cursor-pointer'>
-				<span className='text-gray-primary/75 font-medium flex items-center gap-1'>Flutter</span>
-				<Checbox name='4.5-5' />
-			</label>
-			<label className='flex justify-between items-center select-none pt-3 cursor-pointer'>
-				<span className='text-gray-primary/75 font-medium flex items-center gap-1'>Mobile</span>
-				<Checbox name='4.5-5' />
-			</label>
-			<label className='flex justify-between items-center select-none pt-3 cursor-pointer'>
-				<span className='text-gray-primary/75 font-medium flex items-center gap-1'>
-					Sun&apos;iy intelekt
-				</span>
-				<Checbox name='4.5-5' />
-			</label>
+			<span className='text-gray-primary font-medium'>{t('slices')}</span>
+			{filters &&
+				filters.slices.map(slice => (
+					<FilterCheckbox
+						key={slice.direction}
+						value={slice.direction}
+						label={t(slice.direction)}
+						onCheckboxChange={onChange}
+						filterType='slices'
+						defaultChecked={defaults.slices.includes(slice.direction)}
+					/>
+				))}
 		</div>
 	)
 }

@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { BookMark, Star, View } from './svgs'
 import { Button } from './buttons'
+import { useTranslations } from 'next-intl'
 
 type Props = {
 	imgUrl: string
@@ -11,7 +12,7 @@ type Props = {
 	rating: number
 	comments: number
 	views: number
-	price: number | 'Bepul'
+	price: number
 	discountPrice?: number
 	className?: string
 }
@@ -27,8 +28,9 @@ export const CourseBlock: React.FC<Props> = ({
 	views,
 	price,
 	discountPrice,
-	className,
 }) => {
+	const t = useTranslations('coursesTitle')
+
 	return (
 		<div className='w-[253px] h-[321px] select-none'>
 			<div className='w-[252px] h-[168px] rounded-2xl relative'>
@@ -38,6 +40,7 @@ export const CourseBlock: React.FC<Props> = ({
 					alt={alt}
 					width={252}
 					height={168}
+					priority
 				/>
 				<div className='w-[66x] h-[66px] pt-3 pl-3 bg-white rounded-tl-2xl -rounded-tr-2xl -rounded-bl-2xl absolute bottom-0 right-0'>
 					<Image
@@ -50,7 +53,7 @@ export const CourseBlock: React.FC<Props> = ({
 				</div>
 			</div>
 			<div className='flex justify-between gap-3 items-start pt-[18px] h-[56px] w-full'>
-				<p className=' text-gray-dark'>{title}</p>
+				<p className=' text-gray-dark'>{t(title)}</p>
 				<BookMark />
 			</div>
 			<div className='flex justify-between items-center w-4/5 pt-4'>
@@ -68,20 +71,20 @@ export const CourseBlock: React.FC<Props> = ({
 					</span>
 				</div>
 			</div>
-			<div className='flex justify-between items-center gap-2 pt-3 border-t-[2px] border-gray-secondary mt-4'>
+			<div className='flex justify-between items-center gap-2 pt-3 border-t-[1px] border-gray-secondary mt-4'>
 				<div>
 					{discountPrice && (
 						<div className='text-sm text-blue-primary line-through font-medium'>
 							{discountPrice}
 						</div>
 					)}
-					{typeof price === 'number' ? (
+					{price > 0 ? (
 						<div className='font-medium text-gray-dark'>
 							{price} <span className='text-gray-primary'>so&apos;m</span>
 						</div>
 					) : (
 						<Button variant='primary' className='py-[12px] h-[43px] leading-[0]'>
-							{price}
+							{t('free')}
 						</Button>
 					)}
 				</div>
@@ -89,7 +92,7 @@ export const CourseBlock: React.FC<Props> = ({
 					variant='grayscale'
 					className='h-[43px] font-medium text-[16px] leading-[0] whitespace-nowrap'
 				>
-					Xarid qilish
+					{t('purchase')}
 				</Button>
 			</div>
 		</div>

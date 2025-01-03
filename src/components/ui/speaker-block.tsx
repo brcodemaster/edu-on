@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { Star } from './svgs'
 import { Button } from './buttons'
+import { useTranslations } from 'next-intl'
 
 type Props = {
 	name: string
@@ -21,8 +22,9 @@ export const SpeakerBlock: React.FC<Props> = ({
 	company,
 	rating,
 	comments,
-	className,
 }) => {
+	const t = useTranslations()
+
 	return (
 		<div className='w-[192px] h-[269px] border border-gray- rounded-[30px] flex flex-col items-center justify-between p-[18px]'>
 			<div className='w-[60px] h-[60px] rounded-2xl'>
@@ -43,7 +45,7 @@ export const SpeakerBlock: React.FC<Props> = ({
 				<Star /> {rating} <p className='text-gray-primary'>({comments})</p>
 			</div>
 			<Button variant={'grayscale'} className='w-full h-[37px] leading-[0] font-medium'>
-				Profil
+				{t('profile')}
 			</Button>
 		</div>
 	)

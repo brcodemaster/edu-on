@@ -1,0 +1,74 @@
+{
+	"filters": {
+		"ratings": [
+			{
+				"value": "5",
+				"label": "4,5 - 5",
+				"rating": "12,965",
+				"isChecked": false
+			},
+			{
+				"value": "4",
+				"label": "4,0 - 4,5",
+				"rating": "98,144",
+				"isChecked": false
+			},
+			{
+				"value": "3",
+				"label": "3,0 - 4,0",
+				"rating": "6,387",
+				"isChecked": false
+			},
+			{
+				"value": "2",
+				"label": "2,0 - 3,0",
+				"rating": "165",
+				"isChecked": false
+			}
+		],
+		"languages": [
+			{
+				"lang": "uz",
+				"isChecked": false
+			},
+			{
+				"lang": "ru",
+				"isChecked": false
+			},
+			{
+				"lang": "en",
+				"isChecked": false
+			},
+			{
+				"lang": "kz",
+				"isChecked": false
+			},
+			{
+				"lang": "tj",
+				"isChecked": false
+			}
+		],
+		"slices": [
+			{
+				"direction": "frontend",
+				"isChecked": false
+			},
+			{
+				"direction": "backend",
+				"isChecked": false
+			},
+			{
+				"direction": "flutter",
+				"isChecked": false
+			},
+			{
+				"direction": "mobile",
+				"isChecked": false
+			},
+			{
+				"direction": "ai",
+				"isChecked": false
+			}
+		]
+	}
+}

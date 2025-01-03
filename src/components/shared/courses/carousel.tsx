@@ -3,11 +3,14 @@
 import { courses } from '@/components/constants'
 import { ActionButton } from '@/components/ui'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { useTranslations } from 'next-intl'
 
 export const Carousel: React.FC = () => {
+	const t = useTranslations('button')
+
 	return (
 		<Swiper
-			className='w-full h-full px-4'
+			className='w-full h-full px-6 max-mobile:px-4'
 			loop={false}
 			spaceBetween={30}
 			slidesPerView='auto'
@@ -18,8 +21,8 @@ export const Carousel: React.FC = () => {
 					<SwiperSlide key={course.title} className='w-[190px]'>
 						<ActionButton
 							key={course.title}
-							title={course.title}
-							subTitle={`${course.amountOfCourse} ta kurs`}
+							title={t(`${course.title}`)}
+							subTitle={`${course.amountOfCourse} ${t(`course`)}`}
 							icon={course.icon}
 							alt={course.alt}
 							link={course.link}

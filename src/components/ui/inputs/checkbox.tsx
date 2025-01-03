@@ -1,31 +1,46 @@
 'use client'
 
 import { cn } from '@/lib/utils'
-import { Span } from 'next/dist/trace'
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
+import { FiltersProps } from '../filters/filter'
 
 type Props = {
-	name: string
+	value: string
+	filterType: keyof FiltersProps
+	defaultChecked: boolean
+	onCheckboxChange?: (
+		value: string,
+		filterType: keyof FiltersProps,
+		method: 'add' | 'delete',
+		isChecked?: boolean
+	) => void
 }
 
-export const Checbox: React.FC<Props> = ({ name }) => {
-	const ref = useRef<HTMLInputElement>(null)
-	const [isChecked, setIsChecked] = useState(false)
+export const Checkbox: React.FC<Props> = ({
+	onCheckboxChange,
+	value,
+	filterType,
+	defaultChecked = false,
+}) => {
+	const [isChecked, setIsChecked] = useState(defaultChecked)
 
-	useEffect(() => {
-		if (ref.current) setIsChecked(ref.current.checked)
-	}, [])
+	const handleChange = () => {
+		if (isChecked === true) {
+			setIsChecked(false)
+			onCheckboxChange?.(value, filterType, 'delete', isChecked)
+		} else {
+			setIsChecked(true)
+			onCheckboxChange?.(value, filterType, 'add', isChecked)
+		}
+	}
 
 	return (
 		<>
 			<input
-				ref={ref}
+				id={value}
 				checked={isChecked}
 				type='checkbox'
-				name={name}
-				onChange={() => {
-					setIsChecked(!isChecked)
-				}}
+				onChange={handleChange}
 				className='hidden'
 			/>
 			<span

@@ -7,6 +7,6 @@ interface Courses {
 	rating: number
 	comments: number
 	views: number
-	price: number | 'Bepul'
+	price: number
 	discountPrice?: number
 }

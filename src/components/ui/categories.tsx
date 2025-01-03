@@ -3,12 +3,11 @@
 import { categories } from '../constants'
 import { CategoryBrick } from './category-brick'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { useTranslations } from 'next-intl'
 
-type Props = {
-	className?: string
-}
+export const Categories: React.FC = () => {
+	const t = useTranslations('categories')
 
-export const Categories: React.FC<Props> = ({ className }) => {
 	return (
 		<div className='w-full relative'>
 			<div className='absolute left-0 top-0 bg-gradient-to-r from-white to-transparent w-10 h-full z-[5]' />
@@ -22,7 +21,7 @@ export const Categories: React.FC<Props> = ({ className }) => {
 				{categories &&
 					categories.map(category => (
 						<SwiperSlide key={category.title} className='w-auto'>
-							<CategoryBrick title={category.title} />
+							<CategoryBrick title={t(`${category.title}`)} />
 						</SwiperSlide>
 					))}
 			</Swiper>

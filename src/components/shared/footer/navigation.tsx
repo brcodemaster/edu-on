@@ -1,14 +1,17 @@
 import { footerNavigations } from '@/components/constants'
-import Link from 'next/link'
+import { Link } from '@/i18n/routing'
+import { useTranslations } from 'next-intl'
 
 export const Navigation: React.FC = () => {
+	const t = useTranslations('footer')
+
 	return (
 		<nav>
 			<ul className='grid grid-cols-3 gap-[58px] max-mobile:grid-cols-1'>
 				{footerNavigations &&
 					footerNavigations.map(navItem => (
 						<li key={navItem.title} className='flex flex-col max-w-[238px]'>
-							<p className='font-medium text-gray-primary pb-[42px]'>{navItem.title}</p>
+							<p className='font-medium text-gray-primary pb-[42px]'>{t(`${navItem.title}`)}</p>
 							{navItem.children &&
 								navItem.children.map(child =>
 									child.title ===
@@ -19,7 +22,7 @@ export const Navigation: React.FC = () => {
 											href={child.link}
 											target='_blank'
 										>
-											{child.title}
+											{t(`${child.title}`)}
 										</a>
 									) : (
 										<Link
@@ -27,7 +30,7 @@ export const Navigation: React.FC = () => {
 											className='font-medium py-3 hover:opacity-70 duration-300'
 											href={child.link}
 										>
-											{child.title}
+											{t(`${child.title}`)}
 										</Link>
 									)
 								)}

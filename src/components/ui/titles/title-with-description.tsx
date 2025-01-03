@@ -1,4 +1,3 @@
-import { cn } from '@/lib/utils'
 import { Title } from './title'
 
 type Props = {
@@ -9,13 +8,7 @@ type Props = {
 	className?: string
 }
 
-export const TitleWithDescription: React.FC<Props> = ({
-	size,
-	title,
-	subTitle,
-	description,
-	className,
-}) => {
+export const TitleWithDescription: React.FC<Props> = ({ size, title, subTitle, description }) => {
 	return (
 		<>
 			<div className='leading-[65px] text-center w-full select-none'>

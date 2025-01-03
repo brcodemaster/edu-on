@@ -1,13 +1,14 @@
-import Image from 'next/image'
-
-import { ArrowToBottom, Button, Container, Logo, SearchIcon, Section } from '@/components/ui'
-import Link from 'next/link'
-import { languages } from '@/components/constants'
+import { Button, Container, Logo, SearchIcon } from '@/components/ui'
 import { Navigation } from './navigation'
+import { LocaleSwitcher } from './localeSwitcher'
+import { Link } from '@/i18n/routing'
+import { useTranslations } from 'next-intl'
 
 export const Header: React.FC = () => {
+	const t = useTranslations()
+
 	return (
-		<header className='py-6 sticky top-0 z-10 backdrop-blur-xl bg-white/30 font-[gilroy] flex items-center'>
+		<header className='py-6 sticky top-0 z-10 bg-white font-[gilroy] flex items-center'>
 			<Container className='flex justify-between items-center gap-2 w-full'>
 				<Link href='/'>
 					<Logo />
@@ -16,27 +17,13 @@ export const Header: React.FC = () => {
 				<div className='flex items-center gap-[30px]'>
 					<div className='max-desktop:hidden flex gap-[30px]'>
 						<SearchIcon />
-						<div className='group/language text-gray-primary relative cursor-pointer'>
-							<div className='flex items-center gap-1 font-medium'>
-								O&apos;z
-								<ArrowToBottom className='group-hover/language:rotate-180 duration-300 delay-100' />
-							</div>
-							<div className='opacity-0 invisible group-hover/language:opacity-100 group-hover/language:visible absolute top-4 right-0 shadow-lg p-5 rounded-[16px] font-medium duration-300 flex flex-col justify-center items-start gap-3 bg-white'>
-								{languages &&
-									languages.map(language => (
-										<span
-											className='hover:text-black cursor-pointer duration-300'
-											key={language.label}
-										>
-											{language.title}
-										</span>
-									))}
-							</div>
-						</div>
+						<LocaleSwitcher />
 					</div>
-					<Button className='hover:bg-blue-primary/15' variant='secondary'>
-						Kirish
-					</Button>
+					<Link href='/login' scroll={false}>
+						<Button className='hover:bg-blue-primary/15' variant='secondary'>
+							{t('signin')}
+						</Button>
+					</Link>
 				</div>
 			</Container>
 		</header>

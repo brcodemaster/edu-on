@@ -3,9 +3,33 @@
 import React, { useState } from 'react'
 import { ArrowToBottom } from '../arrows'
 import { cn } from '@/lib/utils'
+import { useTranslations } from 'next-intl'
+import { useSearchParams } from 'next/navigation'
+import { FiltersProps } from './filter'
 
-export const FilterSelect: React.FC = () => {
+type Props = {
+	filterSelects: (
+		value: string,
+		filterType: keyof FiltersProps,
+		method: 'add' | 'delete',
+		isChecked?: boolean
+	) => void
+}
+
+export const FilterSelect: React.FC<Props> = ({ filterSelects }) => {
 	const [isOpened, setIsOpened] = useState(false)
+	const t = useTranslations('select')
+	const searchParams = useSearchParams()
+
+	const [value, setValue] = useState<'news' | 'olds' | 'all'>(
+		searchParams.get('sortBy') ? (searchParams.get('sortBy') as 'news' | 'olds' | 'all') : 'all'
+	)
+
+	const updateValue = (value: 'news' | 'olds' | 'all') => {
+		setValue(value)
+		setIsOpened(false)
+		filterSelects(value, 'sortBy', 'add')
+	}
 
 	return (
 		<div className='relative select-none'>
@@ -13,10 +37,9 @@ export const FilterSelect: React.FC = () => {
 				className='w-[254px] h-[46px] rounded-xl border border-gray-secondary p-[15px] flex justify-between items-center cursor-pointer'
 				onClick={() => {
 					setIsOpened(!isOpened)
-					console.log(isOpened)
 				}}
 			>
-				Yangi qo&apos;shilganlar
+				{t(value)}
 				<ArrowToBottom
 					className={cn(
 						'border border-gray-secondary p-1 rounded-full duration-300',
@@ -30,11 +53,30 @@ export const FilterSelect: React.FC = () => {
 					isOpened && 'visible h-[168px] opacity-100'
 				)}
 			>
-				<div className='hover:bg-blue-secondary p-4 rounded-xl cursor-pointer'>
-					Yangi qo&apos;shilganlar
+				<div
+					className='hover:bg-blue-secondary p-4 rounded-xl cursor-pointer'
+					onClick={() => {
+						updateValue('news')
+					}}
+				>
+					{t('news')}
 				</div>
-				<div className='hover:bg-blue-secondary p-4 rounded-xl cursor-pointer'>Eng eskilari</div>
-				<div className='hover:bg-blue-secondary p-4 rounded-xl cursor-pointer'>Barchasi</div>
+				<div
+					className='hover:bg-blue-secondary p-4 rounded-xl cursor-pointer'
+					onClick={() => {
+						updateValue('olds')
+					}}
+				>
+					{t('olds')}
+				</div>
+				<div
+					className='hover:bg-blue-secondary p-4 rounded-xl cursor-pointer'
+					onClick={() => {
+						updateValue('all')
+					}}
+				>
+					{t('all')}
+				</div>
 			</div>
 		</div>
 	)

@@ -49,8 +49,7 @@ const DualRangeSlider = React.forwardRef<
 									)} */}
 									<NumberFlow
 										willChange
-										// @ts-ignore
-										value={value}
+										value={value as number}
 										isolate
 										opacityTiming={{
 											duration: 250,
@@ -79,8 +78,9 @@ const DualRangeSlider = React.forwardRef<
 
 			{label && labelPosition === 'static' && (
 				<>
-					{initialValue.map((value, index) => (
+					{initialValue.map(value => (
 						<div
+							key={value}
 							className={cn(
 								'absolute -top-7 w-fit right-0 flex  justify-center items-start gap-0.5'
 							)}
@@ -96,8 +96,7 @@ const DualRangeSlider = React.forwardRef<
 							)}
 							<NumberFlow
 								willChange
-								// @ts-ignore
-								value={value}
+								value={value as number}
 								isolate
 								opacityTiming={{
 									duration: 250,

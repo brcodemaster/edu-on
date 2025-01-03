@@ -6,13 +6,19 @@ import { useState } from 'react'
 type Props = {
 	leftSide: string
 	rightSide: string
+	className?: string
 }
 
-export const SwitchCase: React.FC<Props> = ({ leftSide, rightSide }) => {
+export const SwitchCase: React.FC<Props> = ({ leftSide, rightSide, className }) => {
 	const [switched, isSwitched] = useState(false)
 
 	return (
-		<div className='text-gray-primary font-medium flex justify-center items-center gap-9 whitespace-nowrap pt-[124px] text-[24px] max-mobile:flex-col max-tablet:pt-[80px]'>
+		<div
+			className={cn(
+				'text-gray-primary font-medium flex justify-center items-center gap-9 whitespace-nowrap pt-[124px] text-[24px] max-mobile:flex-col max-tablet:pt-[80px]',
+				className
+			)}
+		>
 			<div className={cn(switched && 'text-blue-primary duration-300')}>{leftSide}</div>
 			<div
 				className='w-[54px] h-[24px] bg-blue-primary rounded-full cursor-pointer relative'
