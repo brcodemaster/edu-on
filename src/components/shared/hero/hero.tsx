@@ -41,7 +41,7 @@ export const Hero: React.FC = () => {
 								<Link href='/courses'>{t('courses')}</Link>
 							</Button>
 							<a
-								href='https://www.google.com/search?q=video&sa=X&sca_esv=6c2e7dfbe02beaf5&sxsrf=ADLYWIIEltxcNpoyoCccslF51SzMT_btDg:1735903067133&udm=2&fbs=AEQNm0BYsTTMbryxDzqPbVETOLCJiCmucAjrRirGrlhiwSGhgK1e1IrwpPktbduDmxgRQroiH49X6QJSecZO1s_VJ7jBG_raqER9HXixq8S-LyHQvAWGaqNNP21ooOVi1FfVD9ThWqSQ1WKGYuilTTkliqgr8G_UVv-EPH2bTq4MzERg9TJztV5n0Myqty2hCEO1gCTh8o_SwD8M6R9LIMowNL_zaOngYg&ved=2ahUKEwj9_bjtttmKAxWwFRAIHWrDPbUQtKgLegQIBRAJ&biw=1440&bih=739&dpr=1#vhid=9cCKyXfTeD1x5M&vssid=mosaic'
+								href='#'
 								className='font-medium text-blue-primary text-lg flex items-center gap-2 hover:opacity-60 duration-300 text-center'
 							>
 								<Play /> {t('seeVideo')}

@@ -26,7 +26,7 @@ export const Range: React.FC<Props> = ({ range }) => {
 
 	useEffect(() => {
 		range('Price of course', 'price', 'add', false, { priceFrom: prices[0], priceTo: prices[1] })
-	}, [prices, range])
+	}, [prices])
 
 	return (
 		<>
