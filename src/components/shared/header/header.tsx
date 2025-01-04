@@ -19,7 +19,7 @@ export const Header: React.FC = () => {
 						<SearchIcon />
 						<LocaleSwitcher />
 					</div>
-					<Link href='/login' scroll={false}>
+					<Link href='/login'>
 						<Button className='hover:bg-blue-primary/15' variant='secondary'>
 							{t('signin')}
 						</Button>

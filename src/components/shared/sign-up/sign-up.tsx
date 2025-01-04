@@ -58,7 +58,6 @@ export const SignUp = () => {
 			</div>
 			<Link
 				href='/login'
-				scroll={false}
 				className='text-lg text-blue-primary flex gap-[6px] font-medium mt-[26px] max-mobile:mt-0 hover:opacity-70'
 			>
 				<Shield /> {t('doUhave')}

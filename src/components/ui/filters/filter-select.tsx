@@ -32,9 +32,9 @@ export const FilterSelect: React.FC<Props> = ({ filterSelects }) => {
 	}
 
 	return (
-		<div className='relative select-none'>
+		<div className='relative select-none w-full'>
 			<div
-				className='w-[254px] h-[46px] rounded-xl border border-gray-secondary p-[15px] flex justify-between items-center cursor-pointer'
+				className='w-[254px] h-[46px] rounded-xl border border-gray-secondary p-[15px] flex justify-between items-center cursor-pointer max-tablet:w-full'
 				onClick={() => {
 					setIsOpened(!isOpened)
 				}}
@@ -49,7 +49,7 @@ export const FilterSelect: React.FC<Props> = ({ filterSelects }) => {
 			</div>
 			<div
 				className={cn(
-					'w-[254px] rounded-xl h-0 duration-200 opacity-0 absolute top-12 left-0 bg-white overflow-hidden z-[5]',
+					'w-[254px] rounded-xl h-0 duration-200 opacity-0 absolute top-12 left-0 bg-white overflow-hidden z-[5] max-tablet:w-full',
 					isOpened && 'visible h-[168px] opacity-100'
 				)}
 			>

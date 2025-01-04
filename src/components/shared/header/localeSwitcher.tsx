@@ -22,7 +22,7 @@ export const LocaleSwitcher: React.FC = () => {
 	}
 
 	return (
-		<div className='group/language text-gray-primary relative cursor-pointer'>
+		<div className='group/language text-gray-primary relative cursor-pointer z-30'>
 			<div className='flex items-center gap-1 font-medium'>
 				{currentLocales[localeActive]}
 				<ArrowToBottom className='group-hover/language:rotate-180 duration-300 delay-100' />

@@ -33,7 +33,7 @@ export const CourseBlock: React.FC<Props> = ({
 
 	return (
 		<div className='w-[253px] h-[321px] select-none'>
-			<div className='w-[252px] h-[168px] rounded-2xl relative'>
+			<div className='w-[252px] h-[168px] rounded-2xl'>
 				<Image
 					className='w-full h-full object-cover z-10'
 					src={imgUrl}
@@ -42,15 +42,6 @@ export const CourseBlock: React.FC<Props> = ({
 					height={168}
 					priority
 				/>
-				<div className='w-[66x] h-[66px] pt-3 pl-3 bg-white rounded-tl-2xl -rounded-tr-2xl -rounded-bl-2xl absolute bottom-0 right-0'>
-					<Image
-						className='w-full h-full object-cover'
-						src={labelImg}
-						alt={labelAlt}
-						width={54}
-						height={54}
-					/>
-				</div>
 			</div>
 			<div className='flex justify-between gap-3 items-start pt-[18px] h-[56px] w-full'>
 				<p className=' text-gray-dark'>{t(title)}</p>

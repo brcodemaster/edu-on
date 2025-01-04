@@ -15,7 +15,7 @@ export const SwitchCase: React.FC<Props> = ({ leftSide, rightSide, className }) 
 	return (
 		<div
 			className={cn(
-				'text-gray-primary font-medium flex justify-center items-center gap-9 whitespace-nowrap pt-[124px] text-[24px] max-mobile:flex-col max-tablet:pt-[80px]',
+				'text-gray-primary font-medium flex justify-center items-center gap-9 whitespace-nowrap pt-[124px] text-[24px] max-mobile:flex-col max-tablet:pt-[0px] max-mobile:pt-[0px] max-mobile:gap-4 max-mobile:text-[20px]',
 				className
 			)}
 		>

@@ -4,17 +4,21 @@ import { SwitchButton } from './switch-button'
 import { socialMedia } from '@/components/constants'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
+import { LocaleSwitcher } from '../header/localeSwitcher'
 
 export const Footer: React.FC = () => {
 	const t = useTranslations()
 
 	return (
-		<Section className='flex flex-col pt-[100px] max-mobile:pt-[30px] font-[gilroy]'>
+		<Section className='flex flex-col pt-[100px] max-mobile:pt-[50px] font-[gilroy] max-tablet:pt-[50px]'>
 			<div className='flex gap-[172px] pb-[50px] max-tablet:flex-col max-tablet:gap-[50px]'>
-				<div className='flex flex-col max-tablet:flex-row max-tablet:gap-5 max-mobile:flex-col max-mobile:justify-center max-mobile:items-center'>
-					<Logo />
-					<SwitchButton />
-					<div className='flex items-center gap-[18px] pt-[80px] max-tablet:pt-0 max-tablet:items-start'>
+				<div className='flex flex-col max-tablet:flex-row max-tablet:justify-between max-tablet:gap-5 max-mobile:flex-col max-mobile:justify-center max-mobile:items-center'>
+					<div className='flex justify-between items-center w-full'>
+						<Logo />
+						<LocaleSwitcher />
+					</div>
+					{/* <SwitchButton /> */}
+					<div className='flex items-center gap-[18px] pt-[30px] max-tablet:pt-0 max-tablet:items-start'>
 						{socialMedia &&
 							socialMedia.map(media => (
 								<a

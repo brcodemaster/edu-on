@@ -21,6 +21,9 @@ export default {
 					secondary: 'rgba(17, 17, 17, 10%)',
 				},
 				border: 'rgba(17, 17, 17, 0.09)',
+				gridTemplateColumns: {
+					'16': 'repeat(auto-fit, 3, minmax(0, 1fr))',
+				},
 			},
 		},
 	},

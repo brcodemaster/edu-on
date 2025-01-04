@@ -10,20 +10,15 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
 	children,
-	modal,
 }: Readonly<{
 	children: React.ReactNode
-	modal: React.ReactNode
 }>) {
 	const messages = await getMessages()
 
 	return (
 		<NextIntlClientProvider messages={messages}>
 			<Header />
-			<main className='font-[gilroy]'>
-				{children}
-				{modal}
-			</main>
+			<main className='font-[gilroy]'>{children}</main>
 			<Footer />
 		</NextIntlClientProvider>
 	)

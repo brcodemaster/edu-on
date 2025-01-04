@@ -96,7 +96,7 @@ export const Filter: React.FC = () => {
 		<div className='w-[254px] h-full shrink-0 max-tablet:w-full'>
 			<FilterSelect filterSelects={updateFilters} />
 			<Range range={updateFilters} />
-			<div className='w-full max-tablet:grid max-tablet:grid-cols-2 max-tablet:w-full max-tablet:gap-5 max-mobile:grid-cols-1'>
+			<div className='w-full max-tablet:grid max-tablet:grid-cols-1 max-tablet:w-full'>
 				<Ratings onChange={updateFilters} defaults={filtersValues} />
 				<Languages onChange={updateFilters} defaults={filtersValues} />
 				<Slices onChange={updateFilters} defaults={filtersValues} />

@@ -11,14 +11,16 @@ type Props = {
 export const TitleWithDescription: React.FC<Props> = ({ size, title, subTitle, description }) => {
 	return (
 		<>
-			<div className='leading-[65px] text-center w-full select-none'>
+			<div className='leading-[65px] text-center w-full select-none max-mobile:leading-[50px]'>
 				<Title size={size} className='w-full max-mobile:text-[45px]'>
 					{title}
 				</Title>
 				<p className='font-[samsungSharp] text-[36px] text-black'>{subTitle}</p>
 			</div>
 			{description && (
-				<p className='font-medium text-gray-primary text-center w-full'>{description}</p>
+				<p className='font-medium text-gray-primary text-center w-full max-mobile:pt-5'>
+					{description}
+				</p>
 			)}
 		</>
 	)
