@@ -1,6 +1,5 @@
 import { Logo, Section } from '@/components/ui'
 import { Navigation } from './navigation'
-import { SwitchButton } from './switch-button'
 import { socialMedia } from '@/components/constants'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'

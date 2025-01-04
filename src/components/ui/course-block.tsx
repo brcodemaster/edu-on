@@ -20,8 +20,6 @@ type Props = {
 export const CourseBlock: React.FC<Props> = ({
 	imgUrl,
 	alt,
-	labelImg,
-	labelAlt,
 	title,
 	rating,
 	comments,
