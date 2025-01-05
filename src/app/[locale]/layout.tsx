@@ -1,6 +1,8 @@
 import localFont from 'next/font/local'
 import 'swiper/css'
 import '../globals.css'
+import { NextIntlClientProvider } from 'next-intl'
+import { getMessages } from 'next-intl/server'
 
 const gilroy = localFont({
 	src: [
@@ -64,14 +66,22 @@ export default async function RootLayout({
 	}
 }>) {
 	const { locale } = await params
+	const messages = await getMessages()
 
 	return (
-		<html lang={locale}>
-			<head>
-				<link rel='shortcut icon' type='image/x-icon' href='/logo.svg' />
-				<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'></link>
-			</head>
-			<body className={`${gilroy.variable} ${samsungSharp.variable} antialiased`}>{children}</body>
-		</html>
+		<NextIntlClientProvider messages={messages}>
+			<html lang={locale}>
+				<head>
+					<link rel='shortcut icon' type='image/x-icon' href='/logo.svg' />
+					<link
+						href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+						rel='stylesheet'
+					></link>
+				</head>
+				<body className={`${gilroy.variable} ${samsungSharp.variable} antialiased`}>
+					{children}
+				</body>
+			</html>
+		</NextIntlClientProvider>
 	)
 }

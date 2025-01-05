@@ -32,10 +32,10 @@ export const Navigation: React.FC<Props> = ({ className }) => {
 						>
 							<Link
 								href={menuItem.link}
-								data-text={menuItem.title}
+								data-text={t(menuItem.title)}
 								className='no-shifting group-hover:font-bold'
 							>
-								{t(`${menuItem.title}`)}
+								{t(menuItem.title)}
 							</Link>
 						</li>
 					))}

@@ -20,7 +20,12 @@ export const Hero: React.FC = () => {
 
 	return (
 		<Section className='flex justify-center pt-[106px] relative max-mobile:pt-14'>
-			<Image className='absolute top-28 left-5 -z-[1]' src={ellipseImg} alt='Ellipse' priority />
+			<Image
+				className='absolute top-28 left-5 -z-[1] max-mobile:top-14'
+				src={ellipseImg}
+				alt='Ellipse'
+				priority
+			/>
 			<Image
 				className='absolute top-28 right-5 max-mobile:hidden -z-[1]'
 				src={cursorImg}
@@ -42,17 +47,13 @@ export const Hero: React.FC = () => {
 							</Button>
 							<a
 								href='#'
-								className='font-medium text-blue-primary text-lg flex items-center gap-2 hover:opacity-60 duration-300 text-center max-mobile:gap-0'
+								className='font-medium text-blue-primary text-lg flex items-center gap-2 hover:opacity-60 duration-300 text-center max-mobile:gap-2'
 							>
 								<Play /> {t('seeVideo')}
 							</a>
 						</div>
 					</div>
-					<SwitchCase
-						leftSide={t('learner')}
-						rightSide={t('teacher')}
-						className='max-mobile:pt-[150px]'
-					/>
+					<SwitchCase leftSide={t('learner')} rightSide={t('teacher')} className='pt-14' />
 					<div className='flex items-center gap-[18px] pt-9 max-mobile:flex-col'>
 						<ActionButton
 							title={t('openProfile')}

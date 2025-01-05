@@ -23,13 +23,13 @@ export const Accordion: React.FC<Props> = ({ text, description, className }) => 
 				setIsOpened(!isOpened)
 			}}
 		>
-			<div className='flex justify-between items-center gap-5 w-full'>
+			<div className='flex justify-between items-center gap-5 w-full text-balance'>
 				{text}
 				<Plus className={cn(isOpened && 'rotate-[135deg] fill-[#EB5757]')} />
 			</div>
 			<div
 				className={cn(
-					'duration-200 h-0 invisible opacity-0 text-gray-primary text-xl max-mobile:text-base',
+					'duration-200 h-0 invisible opacity-0 text-gray-primary text-xl max-mobile:text-base text-balance',
 					isOpened && 'h-auto visible opacity-100 py-[18px]'
 				)}
 			>
