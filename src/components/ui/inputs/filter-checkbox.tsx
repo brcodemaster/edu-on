@@ -32,7 +32,7 @@ export const FilterCheckbox: React.FC<FilterCheckbox> = ({
 	return (
 		<label className='flex justify-between items-center select-none pt-3 cursor-pointer'>
 			<span className={cn('font-medium flex items-center gap-1', className)}>
-				{star && <Star />}
+				{star && <Star height={16} width={15} />}
 				{label}
 				{rating && <span className='opacity-50 font-medium'>({rating})</span>}
 			</span>

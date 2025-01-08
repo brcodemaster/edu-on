@@ -45,6 +45,15 @@ body::-webkit-scrollbar-thumb {
 	.overflow-x::-webkit-scrollbar-thumb {
 		@apply bg-blue-primary rounded-xl;
 	}
+
+	.truncated {
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		line-clamp: 3;
+	}
 }
 
 /* * {

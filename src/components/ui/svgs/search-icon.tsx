@@ -13,7 +13,7 @@ export const SearchIcon: React.FC = () => {
 		<>
 			<div
 				className={cn(
-					'opacity-0 invisible z-50 duration-300 fixed top-0 left-0 right-0 bottom-0',
+					'opacity-0 invisible z-50 duration-300 fixed top-0 left-0 right-0 bottom-0 max-desktop:hidden',
 					isFocused && 'opacity-100 visible bg-black/20'
 				)}
 				onClick={() => {

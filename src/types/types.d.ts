@@ -1,12 +1,30 @@
 interface Courses {
-	imgUrl: string
-	alt: string
-	labelImg: string
-	labelAlt: string
+	id: number
 	title: string
+	description: string
+	author: {
+		name: string
+		specialist: string
+		imgUrl: string
+		alt: string
+		company?: string
+		rating: number
+		comments: number
+	}
 	rating: number
 	comments: number
 	views: number
 	price: number
-	discountPrice?: number
+	discountPrice: number
+	outcomes: string[]
+	audience: string[]
+	contents: string[]
+	atCourse: {
+		forEver: boolean
+		hours: number
+		videos: number
+		certificate: boolean
+	}
+	imgUrl: string
+	alt: string
 }

@@ -25,22 +25,21 @@ export default function Courses() {
 				<SwitchCase
 					leftSide={t('slices')}
 					rightSide={t('inTeachers')}
-					className='max-mobile:pt-20'
+					className='max-tablet:pt-10 max-mobile:pt-8'
 				/>
 			</div>
-			<div className='border-t border-t-border mt-[54px] pt-[36px] w-full flex justify-between items-start gap-[54px] max-tablet:flex-col max-mobile:gap-5'>
+			<div className='border-t border-t-border mt-[54px] pt-[36px] w-full flex justify-between items-start gap-[54px] max-tablet:flex-col max-tablet:gap-5 max-mobile:gap-4'>
 				<Filter />
 				<div className='overflow-hidden w-full h-full'>
 					<Categories />
-					<div className='py-9 grid grid-cols-3 gap-y-9 max-desktop:grid-cols-2 max-mobile:grid-cols-1 max-tablet:pl-5'>
+					<div className='py-9 grid grid-cols-3 gap-y-9 max-desktop:grid-cols-2 max-mobile:grid-cols-1 max-tablet:pl-14 max-tablet:py-6 max-mobile:pl-7'>
 						{newCourses &&
 							newCourses.map(newCourse => (
 								<CourseBlock
+									id={String(newCourse.id)}
 									key={newCourse.title}
 									imgUrl={newCourse.imgUrl}
 									alt={newCourse.alt}
-									labelImg={newCourse.labelImg}
-									labelAlt={newCourse.labelAlt}
 									title={newCourse.title}
 									comments={newCourse.comments}
 									price={newCourse.price}

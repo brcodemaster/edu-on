@@ -32,7 +32,7 @@
 	"signup": "Ro'yxatdan o'tish",
 	"signin": "Kirish",
 	"sendConfirm": "Kirish kodini yuborish",
-	"doUhave": "Tasdiqlash kodini qayta yuborish",
+	"doUhave": "Akkountingiz bormi?",
 	"phone": "Tel.raqam",
 	"password": "Parol",
 	"name": "Ismingiz",
@@ -57,15 +57,36 @@
 		"blog": "Blog yuritishni 0 dan o’rganamiz. Amaliy",
 		"ux": "UX/UI dizayn. Figmada boshlang’ich app dizayn",
 		"SMM": "SMM. Boshlang‘ich smm va intensiv dizayn",
-		"english": "Academic english. Upper intermediate level",
-		"telegramBot": "Telegram bot haqida qisqacha. Kirish"
+		"english": "Akademik ingliz tili. Yuqori darajada",
+		"telegramBot": "Telegram bot haqida qisqacha. Kirish",
+		"author": "Avtor"
+	},
+	"inCourse": {
+		"inCourse": "Kurs ichida",
+		"lifetime": "Umrbod egalik qilish imkoniyati",
+		"hours": "soatlik videodarslik",
+		"videos": "ta videodarslik",
+		"certificate": "Kursni tugatganlik haqida sertifikat"
+	},
+	"outComes": {
+		"outComes": "Kursdan nima olasiz?"
+	},
+	"forWhom": {
+		"forWhom": "Kurs kimlar uchun?"
+	},
+	"courseContent": {
+		"courseContent": "Kurs tarkibi"
 	},
 	"button": {
 		"marketing": "Marketing",
 		"programming": "Dasturlash",
 		"design": "Dizayn",
 		"religion": "Din va diyonat",
-		"course": "ta kurs"
+		"course": "ta kurs",
+		"foreignLang": "Xorijit tillar",
+		"business": "Biznes",
+		"management": "Menejment",
+		"sale": "Sotuv"
 	},
 	"footer": {
 		"webSite": "Veb sayt xaritasi",
@@ -192,5 +213,32 @@
 	},
 	"find": "Kurs nomini yozing",
 	"forgot": "Parolni unutdingizmi?",
-	"dontHave": "Akkountingiz yo'qmi? unda"
+	"dontHave": "Akkountingiz yo'qmi? unda",
+	"form": {
+		"name": "Ismingiz",
+		"placeholderName": "Misol: Husan Mamasaidov",
+		"email": "Elektron pochtangiz",
+		"placeholderEmail": "Misol: eduonplatform@gmail.com",
+		"phone": "Telefon raqamingiz",
+		"placeholderPhone": "+998 XX XXX XX XX",
+		"message": "Xabaringiz",
+		"placeholderMessage": "Shu yerga yozing",
+		"send": "Yuborish"
+	},
+	"inUzb": "O'zbekistondagi ilk",
+	"onlayn": "onlayn o'quv platformasi",
+	"tranings": "Traninglar, seminarlar, vebinar va online darsliklar uchun yagona o'zbek tilidagi platforma. Muvaffaqiyatli insonlar ilmi bilan bo'lishamiz",
+	"partners": "HAMKORLARIMIZ",
+	"toEduOn": "EduOn ga hissa qo'shganlar",
+	"companies": "IT va marketing kompaniyalari",
+	"7": "7 ta",
+	"about": "Biz haqimizda",
+	"mFaktor": "EduOn MFaktor tomonidan har kimga, hamma joyda hayotni o'zgartiradigan ta'lim tajribalarini taqdim etish niyatida asos solingan.",
+	"current": "Hozirda bu O'zbekiston bo'ylab million o'quvchi kelajak ko'nikmalarini o'rganish uchun yetakchi onlayn ta'lim platformasi.",
+	"certificates": "O'zbekistonning dan ortiq eng yaxshi universitetlari va soha o'qituvchilari EduOn bilan hamkorlik qilib, kurslar, mutaxassisliklar, sertifikatlar va diplom dasturlarini taklif qilmoqdalar.",
+	"aboutCourse": "Kurs haqida",
+	"world": "EduOn dagi har bir kursni jahon miqyosidagi universitetlar va kompaniyalarning ustozlari o'qitadilar, shuning uchun siz istagan vaqtingizda va istagan joyda yangi narsalarni o'rganishingiz mumkin.",
+	"every day": "Yuzlab kurslar talab bo'yicha video ma'ruzalar, uy vazifalari mashqlari va jamoatchilik muhokamalari forumlariga kirish imkoniyatini beradi. Har kuni o'zingiz uchun yangilik kashf eting!",
+	"speakerAndSimilar": "Spiker va o'xshash kurslar",
+	"comments": "Izohlar"
 }

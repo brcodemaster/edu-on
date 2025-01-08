@@ -32,7 +32,7 @@
 	"signup": "Sign up",
 	"signin": "Sign in",
 	"sendConfirm": "Send confirm code",
-	"doUhave": "Resend confirmation code",
+	"doUhave": "Do you have an account?",
 	"phone": "Phone number",
 	"name": "Your name",
 	"pupil": "Pupil",
@@ -58,14 +58,35 @@
 		"ux": "UX/UI design. Figma is the starting app design",
 		"SMM": "SMM. Starting SMM and Intensive Design",
 		"english": "Academic english. Upper intermediate level",
-		"telegramBot": "Briefly about Telegram Bot. Introduction"
+		"telegramBot": "Briefly about Telegram Bot. Introduction",
+		"author": "Author"
+	},
+	"inCourse": {
+		"inCourse": "In course",
+		"lifetime": "Lifetime ownership",
+		"hours": "hours video lessons",
+		"videos": "video lessons",
+		"certificate": "Course completion certificate"
+	},
+	"outComes": {
+		"outComes": "What will you get from the course?"
+	},
+	"forWhom": {
+		"forWhom": "Who is the course for?"
+	},
+	"courseContent": {
+		"courseContent": "Content of course"
 	},
 	"button": {
 		"marketing": "Marketing",
 		"programming": "Programming",
 		"design": "Design",
 		"religion": "Religion and piety",
-		"course": "courses"
+		"course": "courses",
+		"foreignLang": "Foreign languages",
+		"business": "Business",
+		"management": "Management",
+		"sale": "Sale"
 	},
 	"footer": {
 		"webSite": "Web site",
@@ -193,5 +214,32 @@
 	"find": "Enter the course name",
 	"password": "Password",
 	"forgot": "Forgot the password?",
-	"dontHave": "Don't have an accountant?"
+	"dontHave": "Don't have an accountant?",
+	"form": {
+		"name": "Your name",
+		"placeholderName": "For example: Husan Mamasaidov",
+		"email": "Your email",
+		"placeholderEmail": "For example: eduonplatform@gmail.com",
+		"phone": "Your phone number",
+		"placeholderPhone": "+998 XX XXX XX XX",
+		"message": "Your message",
+		"placeholderMessage": "Write here",
+		"send": "Send message"
+	},
+	"inUzb": "First in Uzbekistan",
+	"onlayn": "online edu platform",
+	"tranings": "The only Uzbek-language platform for trainings, seminars, webinars and online textbooks. We share the science of successful people",
+	"partners": "PARTNERS",
+	"toEduOn": "Contributors to EduOn",
+	"companies": "IT and marketing companies",
+	"7": "7",
+	"about": "About us",
+	"mFaktor": "EduOn was founded by MFaktor with the vision of providing life-changing educational experiences to everyone, everywhere.",
+	"current": "Currently, it is the leading online learning platform for millions of students across Uzbekistan to learn future skills.",
+	"certificates": "More than the best universities and teachers of the field of Uzbekistan cooperate with EduOn and offer courses, specializations, certificates and diploma programs.",
+	"aboutCourse": "About course",
+	"world": "Every course at EduOn is taught by instructors from world-class universities and companies, so you can learn new things whenever and wherever you want.",
+	"every day": "Hundreds of courses offer on-demand video lectures, homework exercises, and access to community discussion forums. Discover something new for yourself every day!",
+	"speakerAndSimilar": "Speaker and similar courses",
+	"comments": "Comments"
 }

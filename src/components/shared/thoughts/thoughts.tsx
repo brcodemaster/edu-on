@@ -6,9 +6,11 @@ export const Thoughts: React.FC = () => {
 	const t = useTranslations()
 
 	return (
-		<Section className='pt-[100px] flex flex-col items-center justify-center'>
+		<Section className='pt-[100px] flex flex-col items-center justify-center max-tablet:pt-[70px]'>
 			<div className='flex flex-col gap-4 justify-center items-center w-full'>
-				<p className='text-blue-primary text-[24px] font-bold uppercase'>{t('thoughts')}</p>
+				<p className='text-blue-primary text-[24px] font-bold uppercase max-tablet:leading-3 max-tablet:text-[30px]'>
+					{t('thoughts')}
+				</p>
 				<Title size='xxl' className='w-full text-center max-tablet:text-[35px]'>
 					{t('they')} <span className='text-black'>{t('aboutUs')}</span>
 				</Title>
@@ -23,7 +25,7 @@ export const Thoughts: React.FC = () => {
 				<Carousel />
 				<Arrows top='35%' yPosition='-10px' index={5} />
 			</div>
-			<Button variant='primary' className='mt-[36px]'>
+			<Button variant='primary' className='mt-[36px] max-tablet:mt-[20px] max-mobile:mt-[15px]'>
 				{t('allThoughts')}
 			</Button>
 		</Section>

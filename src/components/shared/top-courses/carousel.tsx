@@ -17,10 +17,9 @@ export const Carousel: React.FC = () => {
 				newCourses.map(topCourse => (
 					<SwiperSlide key={topCourse.title} className='w-[253px]'>
 						<CourseBlock
+							id={String(topCourse.id)}
 							imgUrl={topCourse.imgUrl}
 							alt={topCourse.alt}
-							labelImg={topCourse.labelImg}
-							labelAlt={topCourse.labelAlt}
 							title={topCourse.title}
 							comments={topCourse.comments}
 							price={topCourse.price}

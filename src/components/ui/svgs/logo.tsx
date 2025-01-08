@@ -2,7 +2,7 @@ export const Logo: React.FC = () => {
 	return (
 		<span>
 			<svg
-				className='logoImg'
+				className='max-h-full max-w-full object-cover'
 				width='120'
 				height='35'
 				viewBox='0 0 120 35'

@@ -21,8 +21,8 @@ export const SignUp = () => {
 	}
 
 	return (
-		<Section className='pt-[126px] flex flex-col justify-center items-center max-mobile:pt-[20px]'>
-			<div className='w-full bg-blue-primary rounded-[72px] py-[55px] px-[72px] relative overflow-hidden  max-mobile:hidden'>
+		<Section className='pt-[126px] flex flex-col justify-center items-center max-tablet:pt-[70px] max-mobile:pt-[20px] max-mobile:hidden'>
+			<div className='w-full bg-blue-primary rounded-[72px] py-[55px] px-[72px] relative overflow-hidden'>
 				<Title
 					size='xl'
 					className='text-white font-[gilroy] font-bold relative z-[1] max-tablet:text-[50px]'
@@ -39,14 +39,16 @@ export const SignUp = () => {
 						placeholder={t('phone')}
 						value={phone}
 						onChange={e => setPhone(e.target.value)}
+						className='max-w-[236px] h-[82px] max-tablet:min-w-full'
 					/>
 					<Input
 						name='name'
 						placeholder={t('name')}
 						value={name}
 						onChange={e => setName(e.target.value)}
+						className='max-w-[236px] h-[82px] max-tablet:min-w-full'
 					/>
-					<Button variant='white' className='whitespace-nowrap'>
+					<Button variant='white' className='whitespace-nowrap max-tablet:min-w-full'>
 						{t('signup')}
 					</Button>
 				</form>

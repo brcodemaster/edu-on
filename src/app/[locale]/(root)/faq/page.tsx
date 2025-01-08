@@ -29,7 +29,11 @@ export default function Page() {
 					/>
 					<Send className='absolute top-1/2 right-5 cursor-pointer active:scale-110 duration-300' />
 				</div>
-				<SwitchCase leftSide={t('slices')} rightSide={t('inTeachers')} className='mt-10' />
+				<SwitchCase
+					leftSide={t('slices')}
+					rightSide={t('inTeachers')}
+					className='mt-10 max-tablet:mt-3 max-mobile:mt-0'
+				/>
 			</div>
 			<div className='pt-9 w-full flex flex-col justify-center items-center border-t-2 border-gray-secondary'>
 				<div className='flex justify-center items-center max-w-[800px] max-tablet:max-w-full'>

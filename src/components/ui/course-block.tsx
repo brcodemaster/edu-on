@@ -2,22 +2,23 @@ import Image from 'next/image'
 import { BookMark, Star, View } from './svgs'
 import { Button } from './buttons'
 import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/routing'
 
 type Props = {
+	id: string
 	imgUrl: string
 	alt: string
-	labelImg: string
-	labelAlt: string
 	title: string
 	rating: number
 	comments: number
 	views: number
 	price: number
-	discountPrice?: number
+	discountPrice: number
 	className?: string
 }
 
 export const CourseBlock: React.FC<Props> = ({
+	id,
 	imgUrl,
 	alt,
 	title,
@@ -31,40 +32,42 @@ export const CourseBlock: React.FC<Props> = ({
 
 	return (
 		<div className='w-[253px] h-[321px] select-none'>
-			<div className='w-[252px] h-[168px] rounded-2xl'>
-				<Image
-					className='w-full h-full object-cover z-10'
-					src={imgUrl}
-					alt={alt}
-					width={252}
-					height={168}
-					priority
-				/>
-			</div>
-			<div className='flex justify-between gap-3 items-start pt-[18px] h-[56px] w-full'>
-				<p className=' text-gray-dark'>{t(title)}</p>
-				<BookMark />
-			</div>
-			<div className='flex justify-between items-center w-4/5 pt-4'>
-				<div className='flex items-center gap-2'>
-					<Star />
-					<span className='flex justify-center items-center'>
-						<p className='text-blue-primary'>{rating}</p>
-						<p className='text-blue-primary/50 pl-1'>({comments})</p>
-					</span>
+			<Link href={`/courses/${id}`}>
+				<div className='w-[252px] h-[168px] rounded-2xl'>
+					<Image
+						className='w-full h-full object-cover z-10'
+						src={imgUrl}
+						alt={alt}
+						width={252}
+						height={168}
+						priority
+					/>
 				</div>
-				<div className='flex items-center gap-2'>
-					<View />
-					<span>
-						<p className='text-blue-primary'>{views}</p>
-					</span>
+				<div className='flex justify-between gap-3 items-start pt-[18px] h-[56px] w-full relative pr-6'>
+					<p className=' text-gray-dark'>{t(title)}</p>
+					<BookMark />
 				</div>
-			</div>
+				<div className='flex justify-between items-center w-4/5 pt-4'>
+					<div className='flex items-center gap-2'>
+						<Star width={16} height={15} />
+						<span className='flex justify-center items-center'>
+							<p className='text-blue-primary'>{rating}</p>
+							<p className='text-blue-primary/50 pl-1'>({comments})</p>
+						</span>
+					</div>
+					<div className='flex items-center gap-2'>
+						<View />
+						<span>
+							<p className='text-blue-primary'>{views}</p>
+						</span>
+					</div>
+				</div>
+			</Link>
 			<div className='flex justify-between items-center gap-2 pt-3 border-t-[1px] border-gray-secondary mt-4'>
 				<div>
-					{discountPrice && (
+					{discountPrice > 0 && (
 						<div className='text-sm text-blue-primary line-through font-medium'>
-							{discountPrice}
+							{discountPrice} so&apos;m
 						</div>
 					)}
 					{price > 0 ? (

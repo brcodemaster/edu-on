@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { Star } from './svgs'
 import { Button } from './buttons'
 import { useTranslations } from 'next-intl'
+import { cn } from '@/lib/utils'
 
 type Props = {
 	name: string
@@ -22,11 +23,17 @@ export const SpeakerBlock: React.FC<Props> = ({
 	company,
 	rating,
 	comments,
+	className,
 }) => {
 	const t = useTranslations()
 
 	return (
-		<div className='w-[192px] h-[269px] border border-gray- rounded-[30px] flex flex-col items-center justify-between p-[18px]'>
+		<div
+			className={cn(
+				'w-[192px] h-[269px] border border-gray- rounded-[30px] flex flex-col items-center justify-between p-[18px]',
+				className
+			)}
+		>
 			<div className='w-[60px] h-[60px] rounded-2xl'>
 				<Image
 					src={imgUrl}
@@ -41,8 +48,9 @@ export const SpeakerBlock: React.FC<Props> = ({
 				<p className='text-gray-primary font-medium text-sm'>{specialist}</p>
 				<p className='text-gray-primary font-medium text-sm'>{company}</p>
 			</div>
-			<div className='flex gap-2 items-center'>
-				<Star /> {rating} <p className='text-gray-primary'>({comments})</p>
+			<div className='flex gap-2 items-center text-blue-primary font-medium'>
+				<Star width={16} height={15} /> {rating}{' '}
+				<p className='text-blue-primary/50'>({comments})</p>
 			</div>
 			<Button variant={'grayscale'} className='w-full h-[37px] leading-[0] font-medium'>
 				{t('profile')}

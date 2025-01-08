@@ -1,7 +1,7 @@
 'use client'
 
 import { Button, Section, SwitchCase } from '@/components/ui'
-import { auth } from '@/firebase'
+import { auth, firebaseConfig } from '@/firebase'
 import { cn } from '@/lib/utils'
 import { ConfirmationResult, RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth'
 import { useTranslations } from 'next-intl'
@@ -50,6 +50,8 @@ export default function Page() {
 		e?.preventDefault()
 		setIsDisabled(false)
 		setTimer(60)
+
+		console.log(firebaseConfig)
 
 		startTransition(async () => {
 			if (!recaptchaVerifier) {

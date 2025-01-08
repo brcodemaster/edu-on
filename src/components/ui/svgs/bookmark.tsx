@@ -8,8 +8,9 @@ export const BookMark: React.FC = () => {
 
 	return (
 		<span
-			className='cursor-pointer'
-			onClick={() => {
+			className='cursor-pointer absolute top-5 right-0'
+			onClick={e => {
+				e.preventDefault()
 				setIsPressed(!isPressed)
 			}}
 		>

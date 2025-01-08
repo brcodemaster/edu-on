@@ -17,7 +17,7 @@ export const LocaleSwitcher: React.FC = () => {
 
 	const switchLocale = (locale: string) => {
 		if (locale !== localeActive) {
-			router.replace(`/${locale}${pathname.slice(3)}`, { scroll: false })
+			router.replace(`/${locale}${pathname.slice(3)}`)
 		}
 	}
 

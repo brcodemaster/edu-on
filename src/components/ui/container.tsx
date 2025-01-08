@@ -8,7 +8,7 @@ export const Container: React.FC<React.PropsWithChildren<Props>> = ({ className,
 	return (
 		<div
 			className={cn(
-				'max-w-[1440px] px-[150px] duration-300 mx-auto max-desktop:px-[90px] max-mobile:px-[80px] max-mobile-sm:px-[40px]',
+				'max-w-[1440px] px-[150px] duration-300 mx-auto max-desktop:px-[90px] max-tablet:px-[50px] max-mobile:px-[30px]',
 				className
 			)}
 		>

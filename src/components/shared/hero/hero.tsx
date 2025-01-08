@@ -19,9 +19,9 @@ export const Hero: React.FC = () => {
 	const t = useTranslations()
 
 	return (
-		<Section className='flex justify-center pt-[106px] relative max-mobile:pt-14'>
+		<Section className='flex justify-center pt-[106px] relative max-mobile:pt-14 max-tablet:pt-[50px]'>
 			<Image
-				className='absolute top-28 left-5 -z-[1] max-mobile:top-14'
+				className='absolute top-28 left-5 -z-[1] max-mobile:top-7'
 				src={ellipseImg}
 				alt='Ellipse'
 				priority
@@ -47,7 +47,7 @@ export const Hero: React.FC = () => {
 							</Button>
 							<a
 								href='#'
-								className='font-medium text-blue-primary text-lg flex items-center gap-2 hover:opacity-60 duration-300 text-center max-mobile:gap-2'
+								className='font-medium text-blue-primary text-lg flex items-center gap-2 hover:opacity-60 duration-300 text-center max-tablet:text-base max-mobile:text-sm max-mobile:gap-2'
 							>
 								<Play /> {t('seeVideo')}
 							</a>
@@ -75,7 +75,7 @@ export const Hero: React.FC = () => {
 						/>
 					</div>
 				</div>
-				<Arrows top='24px' yPosition='-50px' className='max-mobile:hidden' index={6} />
+				<Arrows top='24px' yPosition='-50px' className='max-tablet:hidden' index={6} />
 			</div>
 		</Section>
 	)

@@ -12,7 +12,7 @@ type Props = {
 
 export const Navigation: React.FC<Props> = ({ className }) => {
 	const path = usePathname()
-	const active = `/${path.split('/').slice(2)}`
+	const active = `/${path.split('/').slice(2, 3)}`
 
 	const t = useTranslations('navigation')
 

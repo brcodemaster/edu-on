@@ -93,7 +93,7 @@ export const Filter: React.FC = () => {
 	}, [filtersValues, router])
 
 	return (
-		<div className='w-[254px] h-full shrink-0 max-tablet:w-full sticky top-[115px]'>
+		<div className='w-[254px] h-full shrink-0 max-tablet:w-full sticky top-[115px] max-tablet:static'>
 			<FilterSelect filterSelects={updateFilters} />
 			<Range range={updateFilters} />
 			<div className='w-full max-tablet:grid max-tablet:grid-cols-1 max-tablet:w-full'>

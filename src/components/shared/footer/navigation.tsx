@@ -11,7 +11,9 @@ export const Navigation: React.FC = () => {
 				{footerNavigations &&
 					footerNavigations.map(navItem => (
 						<li key={navItem.title} className='flex flex-col max-w-[238px]'>
-							<p className='font-medium text-gray-primary pb-[42px]'>{t(`${navItem.title}`)}</p>
+							<p className='font-medium text-gray-primary pb-[42px] max-tablet:pb-[30px] max-mobile:pb-[20px]'>
+								{t(`${navItem.title}`)}
+							</p>
 							{navItem.children &&
 								navItem.children.map(child =>
 									child.title ===
