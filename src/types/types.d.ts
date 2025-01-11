@@ -1,3 +1,5 @@
+import { Audience, Comment, Content, Course, Course_Param, Profit, Speaker } from '@prisma/client'
+
 interface Courses {
 	id: number
 	title: string
@@ -27,4 +29,13 @@ interface Courses {
 	}
 	imgUrl: string
 	alt: string
+}
+
+type CourseWithRelations = Course & {
+	author: Speaker
+	audience: Audience
+	comments: Comment
+	contents: Content
+	courseParam: Course_Param
+	profits: Profit
 }

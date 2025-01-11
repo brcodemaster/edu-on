@@ -1,0 +1,114 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Course {
+  id Int @id @default(autoincrement())
+
+  title       String @db.VarChar(255)
+  description String @db.VarChar(500)
+
+  author   Speaker @relation(fields: [authorId], references: [id])
+  authorId Int     @map("author_id")
+
+  rating        Float      @default(0.0)
+  ratingCount   Int        @default(0)
+  comments      Comment[]
+  currentPrice  Float
+  discountPrice Float
+  profits       Profit[]
+  audience      Audience[]
+  contents      Content[]
+
+  imgUrl String @map("img_url")
+  alt    String
+
+  courseParam Course_Param?
+}
+
+model Speaker {
+  id Int @id @default(autoincrement())
+
+  name        String @db.VarChar(100)
+  lastName    String @map("last_name") @db.VarChar(100)
+  teach       String @db.VarChar(100)
+  imgUrl      String @map("img_url")
+  ownCompany  String @map("own_company") @db.VarChar(100)
+  rating      Float
+  ratingCount Int    @default(0) @map("rating_count")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  courses Course[]
+}
+
+model Comment {
+  id Int @id @default(autoincrement())
+
+  comment   String @db.Text
+  writtenBy String @map("written_by")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  course   Course @relation(fields: [courseId], references: [id])
+  courseId Int    @map("course_id")
+}
+
+model Profit {
+  id Int @id @default(autoincrement())
+
+  profit String @db.Text
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  course   Course @relation(fields: [courseId], references: [id])
+  courseId Int
+}
+
+model Audience {
+  id Int @id @default(autoincrement())
+
+  audience String @db.Text
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  course   Course @relation(fields: [courseId], references: [id])
+  courseId Int
+}
+
+model Content {
+  id Int @id @default(autoincrement())
+
+  content String @db.Text
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  course   Course @relation(fields: [courseId], references: [id])
+  courseId Int
+}
+
+model Course_Param {
+  id Int @id @default(autoincrement())
+
+  views       Int
+  forEver     Boolean @map("for_ever")
+  hours       Int
+  videos      Int
+  certificate Boolean
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  course   Course @relation(fields: [courseId], references: [id])
+  courseId Int    @unique @map("course_id")
+}

@@ -6,23 +6,25 @@ import { cn } from '@/lib/utils'
 
 type Props = {
 	name: string
+	lastName: string
 	specialist: string
 	imgUrl: string
 	alt: string
 	company: string
 	rating: number
-	comments: number
+	ratingCount: number
 	className?: string
 }
 
 export const SpeakerBlock: React.FC<Props> = ({
 	name,
+	lastName,
 	specialist,
 	imgUrl,
 	alt,
 	company,
 	rating,
-	comments,
+	ratingCount,
 	className,
 }) => {
 	const t = useTranslations()
@@ -43,14 +45,18 @@ export const SpeakerBlock: React.FC<Props> = ({
 					className='w-[60px] h-[60px] object-cover'
 				/>
 			</div>
-			<div>
-				<p className='text-black font-medium text-[20px]'>{name}</p>
+			<div className='w-full flex flex-col items-center'>
+				<p className='text-black font-medium text-[20px]'>
+					{`${name} ${lastName.split('').slice(0)[0]}.`}
+				</p>
 				<p className='text-gray-primary font-medium text-sm'>{specialist}</p>
 				<p className='text-gray-primary font-medium text-sm'>{company}</p>
 			</div>
 			<div className='flex gap-2 items-center text-blue-primary font-medium'>
 				<Star width={16} height={15} /> {rating}{' '}
-				<p className='text-blue-primary/50'>({comments})</p>
+				<p className='text-blue-primary/50'>
+					({new Intl.NumberFormat('ru-Ru').format(ratingCount)})
+				</p>
 			</div>
 			<Button variant={'grayscale'} className='w-full h-[37px] leading-[0] font-medium'>
 				{t('profile')}

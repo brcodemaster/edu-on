@@ -15,7 +15,7 @@ export const Carousel: React.FC = () => {
 		>
 			{thoughts &&
 				thoughts.map(thought => (
-					<SwiperSlide key={thought.name} className='w-[239px]'>
+					<SwiperSlide key={thought.name} className='w-[239px] flex items-center'>
 						<ThoughtBlock
 							imgUrl={thought.imgUrl}
 							alt={thought.alt}

@@ -16,18 +16,14 @@ export const Thoughts: React.FC = () => {
 				</Title>
 			</div>
 			<div
-				className='flex justify-center items-center h-[278px] pt-[36px] relative max-w-[870px]
+				className='flex justify-center items-center mt-[36px] h-[235px] relative max-w-[870px]
 			max-tablet:max-w-[580px] max-mobile:max-w-[310px] px-6'
 			>
 				<div className='absolute left-6 top-0 bg-gradient-to-r from-white to-transparent w-4 h-full z-[5]' />
 				<div className='absolute right-6 top-0 bg-gradient-to-l from-white to-transparent w-4 h-full z-[5]' />
-
 				<Carousel />
-				<Arrows top='35%' yPosition='-10px' index={5} />
+				<Arrows top='50%' yPosition='-10px' index={5} />
 			</div>
-			<Button variant='primary' className='mt-[36px] max-tablet:mt-[20px] max-mobile:mt-[15px]'>
-				{t('allThoughts')}
-			</Button>
 		</Section>
 	)
 }

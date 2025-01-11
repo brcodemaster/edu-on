@@ -22,7 +22,7 @@ export const Speakers: React.FC = () => {
 				<div className='absolute left-0 top-0 bg-gradient-to-r from-white to-transparent w-4 h-full z-[5]' />
 				<div className='absolute right-0 top-0 bg-gradient-to-l from-white to-transparent w-4 h-full z-[5]' />
 				<Carousel />
-				<Arrows top='50%' yPosition='-2rem' index={3} />
+				<Arrows top='54%' yPosition='-20px' index={3} />
 			</div>
 			<Button variant='primary' className='mt-[36px] max-tablet:mt-[20px] max-mobile:mt-[15px]'>
 				{t('allSpeakers')}

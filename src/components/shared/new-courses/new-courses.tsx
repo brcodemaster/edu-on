@@ -20,7 +20,7 @@ export const NewCourses: React.FC = () => {
 				<div className='absolute left-0 top-0 bg-gradient-to-r from-white to-transparent w-4 h-full z-[5]' />
 				<div className='absolute right-0 top-0 bg-gradient-to-l from-white to-transparent w-4 h-full z-[5]' />
 				<Carousel />
-				<Arrows top='50%' yPosition='-20px' index={2} />
+				<Arrows top='53%' yPosition='-20px' index={2} />
 			</div>
 			<Button variant='primary' className='mt-[36px] max-tablet:mt-[25px] max-mobile:mt-[20px]'>
 				<Link href='/courses'>{t('all')}</Link>

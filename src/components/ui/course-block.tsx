@@ -5,12 +5,12 @@ import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/routing'
 
 type Props = {
-	id: string
+	id: number
 	imgUrl: string
 	alt: string
 	title: string
 	rating: number
-	comments: number
+	ratingCount: number
 	views: number
 	price: number
 	discountPrice: number
@@ -23,7 +23,7 @@ export const CourseBlock: React.FC<Props> = ({
 	alt,
 	title,
 	rating,
-	comments,
+	ratingCount,
 	views,
 	price,
 	discountPrice,
@@ -44,7 +44,7 @@ export const CourseBlock: React.FC<Props> = ({
 					/>
 				</div>
 				<div className='flex justify-between gap-3 items-start pt-[18px] h-[56px] w-full relative pr-6'>
-					<p className=' text-gray-dark'>{t(title)}</p>
+					<p className=' text-gray-dark text-balance'>{t(title)}</p>
 					<BookMark />
 				</div>
 				<div className='flex justify-between items-center w-4/5 pt-4'>
@@ -52,13 +52,15 @@ export const CourseBlock: React.FC<Props> = ({
 						<Star width={16} height={15} />
 						<span className='flex justify-center items-center'>
 							<p className='text-blue-primary'>{rating}</p>
-							<p className='text-blue-primary/50 pl-1'>({comments})</p>
+							<p className='text-blue-primary/50 pl-1'>
+								({new Intl.NumberFormat('ru-Ru').format(ratingCount)})
+							</p>
 						</span>
 					</div>
 					<div className='flex items-center gap-2'>
 						<View />
 						<span>
-							<p className='text-blue-primary'>{views}</p>
+							<p className='text-blue-primary'>{new Intl.NumberFormat('ru-Ru').format(views)}</p>
 						</span>
 					</div>
 				</div>
@@ -67,12 +69,13 @@ export const CourseBlock: React.FC<Props> = ({
 				<div>
 					{discountPrice > 0 && (
 						<div className='text-sm text-blue-primary line-through font-medium'>
-							{discountPrice} so&apos;m
+							{new Intl.NumberFormat('ru-Ru').format(discountPrice)} so&apos;m
 						</div>
 					)}
 					{price > 0 ? (
 						<div className='font-medium text-gray-dark'>
-							{price} <span className='text-gray-primary'>so&apos;m</span>
+							{new Intl.NumberFormat('ru-Ru').format(price)}{' '}
+							<span className='text-gray-primary'>so&apos;m</span>
 						</div>
 					) : (
 						<Button variant='primary' className='py-[12px] h-[43px] leading-[0]'>
