@@ -4,7 +4,7 @@ import db from '../../../../db/db.json'
 import { useTranslations } from 'next-intl'
 import { FilterCheckbox } from '../inputs/filter-checkbox'
 import { FiltersProps } from './filter'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ArrowToBottom } from '../arrows'
 import { cn } from '@/lib/utils'
 
@@ -19,6 +19,11 @@ type Props = {
 }
 
 export const Slices: React.FC<Props> = ({ onChange, defaults }) => {
+	useEffect(() => {
+		const isOpened = localStorage.getItem('slicesIsOpen') === 'true'
+		setShow(isOpened)
+	}, [])
+
 	const [show, setShow] = useState(false)
 
 	const t = useTranslations('slicesBlock')
@@ -34,7 +39,15 @@ export const Slices: React.FC<Props> = ({ onChange, defaults }) => {
 		>
 			<div
 				className='flex justify-between items-center cursor-pointer'
-				onClick={() => setShow(!show)}
+				onClick={() => {
+					if (show === false) {
+						setShow(true)
+						localStorage.setItem('slicesIsOpen', 'true')
+					} else {
+						setShow(false)
+						localStorage.setItem('slicesIsOpen', '')
+					}
+				}}
 			>
 				<span className='text-gray-primary font-medium'>{t('slices')}</span>
 				<ArrowToBottom

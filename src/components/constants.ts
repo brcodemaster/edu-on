@@ -1,3 +1,5 @@
+import { Courses } from '@/types/types'
+
 export const menus = [
 	{
 		title: 'home',

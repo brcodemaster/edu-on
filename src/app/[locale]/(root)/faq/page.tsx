@@ -36,10 +36,7 @@ export default function Page() {
 				/>
 			</div>
 			<div className='pt-9 w-full flex flex-col justify-center items-center border-t-2 border-gray-secondary'>
-				<div className='flex justify-center items-center max-w-[800px] max-tablet:max-w-full'>
-					<Categories />
-				</div>
-				<div className='pt-9 w-full flex flex-col gap-[18px]'>
+				<div className='pt-4 w-full flex flex-col gap-[18px]'>
 					<Accordion text={t('pay')} description={t('answer')} />
 					<Accordion text={t('credit')} description={t('answer')} />
 					<Accordion text={t('onlinePay')} description={t('answer')} />

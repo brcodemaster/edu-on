@@ -3,7 +3,21 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export async function GET(req: NextRequest) {
 	try {
-		const response = await prisma.speaker.findMany()
+		const oneMonthAgo = new Date()
+		oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1)
+
+		const response = await prisma.course.findMany({
+			where: {
+				courseParam: {
+					createdAt: {
+						gte: oneMonthAgo,
+					},
+				},
+			},
+			include: {
+				courseParam: true,
+			},
+		})
 
 		return NextResponse.json(response, { status: 200 })
 	} catch (error: any) {

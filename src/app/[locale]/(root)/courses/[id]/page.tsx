@@ -1,4 +1,3 @@
-import { newCourses } from '@/components/constants'
 import {
 	Audience,
 	CommentsOfCourse,
@@ -10,13 +9,26 @@ import {
 	ParamsOfCourse,
 } from '@/components/shared'
 import { Section } from '@/components/ui'
+import { prisma } from '@/prisma/prisma-client'
 import { notFound } from 'next/navigation'
 
 export default async function page({ params }: { params: Promise<{ id: string }> }) {
 	try {
 		const { id: idCourse } = await params
 
-		const course = newCourses.find(course => course.id === Number(idCourse))
+		const course = await prisma.course.findFirst({
+			where: {
+				id: Number(idCourse),
+			},
+			include: {
+				audience: true,
+				author: true,
+				comments: true,
+				contents: true,
+				courseParam: true,
+				profits: true,
+			},
+		})
 
 		if (!course) {
 			return
@@ -27,33 +39,37 @@ export default async function page({ params }: { params: Promise<{ id: string }>
 				<div className='max-w-[676px]'>
 					<CourseTitle title={course.title} description={course.description} />
 					<ParamsOfCourse
-						author={course.author.name}
-						comments={course.comments}
+						authorName={course.author.name}
+						authorLastName={course.author.lastName}
+						ratingCount={course.ratingCount}
 						rating={course.rating}
-						views={course.views}
+						views={course.courseParam!.views}
 					/>
 					<div className='py-9 border-b border-b-border max-mobile:py-5'>
-						<OutComes outComes={course.outcomes} />
+						<OutComes outComes={course.profits} />
 					</div>
 					<div className='py-9 border-b border-b-border max-mobile:py-5'>
 						<Audience audience={course.audience} />
 					</div>
 					<div className='py-9 border-b border-b-border max-mobile:py-5'>
-						<ContentOfCourse contents={course.contents} />
+						<ContentOfCourse
+							contents={course.contents}
+							certificate={course.courseParam!.certificate}
+						/>
 					</div>
 					<div className='py-9 border-b border-border '>
-						<Course />
+						<Course id={idCourse} speaker={course.author} />
 					</div>
 					<div className='py-9'>
-						<CommentsOfCourse />
+						<CommentsOfCourse comments={course.comments} />
 					</div>
 				</div>
 				<CourseBlock
 					imgUrl={course.imgUrl}
 					alt={course.alt}
-					hours={course.atCourse.hours}
-					price={course.price}
-					videos={course.atCourse.videos}
+					hours={course.courseParam!.hours}
+					price={course.currentPrice}
+					videos={course.courseParam!.videos}
 					discountPrice={course.discountPrice}
 				/>
 			</Section>

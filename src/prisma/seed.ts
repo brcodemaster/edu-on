@@ -4,22 +4,22 @@ async function up() {
 	await prisma.speaker.createMany({
 		data: [
 			{
-				name: 'Akmal',
-				lastName: "Po'latov",
-				teach: 'IT Biznes',
-				imgUrl: '/speaker-1.png',
-				ownCompany: 'Express24',
-				rating: 4.7,
-				ratingCount: 12965,
-			},
-			{
 				name: 'Husan',
 				lastName: 'Mamasaidov',
 				teach: 'Biznes',
-				imgUrl: '/speaker-2.png',
+				imgUrl: '/speaker-1.png',
 				ownCompany: 'MFaktor',
 				rating: 4.6,
 				ratingCount: 1011,
+			},
+			{
+				name: 'Akmal',
+				lastName: "Po'latov",
+				teach: 'IT Biznes',
+				imgUrl: '/speaker-2.png',
+				ownCompany: 'Express24',
+				rating: 4.7,
+				ratingCount: 12965,
 			},
 			{
 				name: 'Hasan',
@@ -36,17 +36,53 @@ async function up() {
 				teach: 'Menejment',
 				imgUrl: '/speaker-4.png',
 				ownCompany: 'Cambridge',
-				rating: 4.7,
-				ratingCount: 12965,
+				rating: 4.3,
+				ratingCount: 6742,
 			},
 			{
 				name: 'Alisher',
 				lastName: 'Bobojonov',
-				teach: 'Psixologiya',
-				imgUrl: '/speaker-1.png',
-				ownCompany: 'Psixoz',
+				teach: 'Bloging',
+				imgUrl: '/speaker-5.png',
+				ownCompany: 'Bloggers House',
 				rating: 3.7,
 				ratingCount: 7435,
+			},
+			{
+				name: 'Qodir',
+				lastName: 'Sherbekov',
+				teach: 'ux',
+				imgUrl: '/speaker-6.png',
+				ownCompany: 'UX Design',
+				rating: 3.1,
+				ratingCount: 1574,
+			},
+			{
+				name: 'Laziz',
+				lastName: 'Mirodilov',
+				teach: 'SMM',
+				imgUrl: '/speaker-7.png',
+				ownCompany: 'SMM',
+				rating: 3.0,
+				ratingCount: 7352,
+			},
+			{
+				name: 'Nodir',
+				lastName: 'Mamatqulov',
+				teach: 'English',
+				imgUrl: '/speaker-8.png',
+				ownCompany: 'U English',
+				rating: 1.4,
+				ratingCount: 150,
+			},
+			{
+				name: 'Behruz',
+				lastName: 'Alijonov',
+				teach: 'Coding',
+				imgUrl: '/speaker-9.png',
+				ownCompany: 'Online Dev',
+				rating: 4.8,
+				ratingCount: 9475,
 			},
 		],
 	})
@@ -57,7 +93,7 @@ async function up() {
 				title: 'CRM',
 				description:
 					"Kompaniya daromadini 2 karraga ko'tarishni istaysizmi? Biznes egalari, top menejer, tadbirkorlar uchun Husan Mamasaidovning 'Strategik marketing' nomli intensiv kurs",
-				authorId: 5,
+				authorId: 1,
 				rating: 4.2,
 				ratingCount: 12965,
 				currentPrice: 2750000,
@@ -69,7 +105,7 @@ async function up() {
 				title: 'business',
 				description:
 					'Biznes sherikchilik aloqalarida halollik va ishonch asosiy tamoyillar hisoblanadi. Ular muvaffaqiyatli va barqaror hamkorlikning kalitidir.',
-				authorId: 3,
+				authorId: 2,
 				rating: 4.7,
 				ratingCount: 54110,
 				currentPrice: 0,
@@ -82,7 +118,7 @@ async function up() {
 				title: 'LTV',
 				description:
 					"Kompaniya daromadini 2 karraga ko'tarishni istaysizmi? Husan Mamasaidovning 'Strategik marketing' intensiv kursi orqali mijozlar bilan aloqalarni mustahkamlang va ularning umrlik qiymatini (LTV) oshirish usullarini o‘rganing.",
-				authorId: 1,
+				authorId: 3,
 				rating: 4.9,
 				ratingCount: 154,
 				currentPrice: 12000000,
@@ -108,7 +144,7 @@ async function up() {
 				title: 'blog',
 				description:
 					'Blog yuritishni boshlash va uni muvaffaqiyatli boshqarish bo‘yicha amaliy kurs. Akmal P. tomonidan o‘rgatiladigan kursda blog yaratishdan tortib, uni rivojlantirish va monetizatsiyaga qadar bo‘lgan barcha jihatlar o‘rganiladi.',
-				authorId: 2,
+				authorId: 5,
 				rating: 4.9,
 				ratingCount: 1483,
 				currentPrice: 1000000,
@@ -121,7 +157,7 @@ async function up() {
 				title: 'ux',
 				description:
 					"UX/UI dizayn asoslari va amaliyotlarini o‘rganing. Jahongir P. tomonidan o‘rgatiladigan kursda foydalanuvchi tajribasini yaratish va interfeys dizaynining eng yaxshi amaliyotlari haqida batafsil ma'lumot olasiz.",
-				authorId: 1,
+				authorId: 6,
 				rating: 4.4,
 				ratingCount: 1548,
 				currentPrice: 0,
@@ -134,8 +170,8 @@ async function up() {
 				title: 'SMM',
 				description:
 					'SMM (Social Media Marketing) ning boshlang‘ich va intensiv asoslarini o‘rganing. Ravshanbekov B. tomonidan o‘rgatiladigan kursda ijtimoiy tarmoqlarda muvaffaqiyatli marketing kampaniyalarini yaratish va yuritishning eng yaxshi amaliyotlari haqida bilib olasiz.',
-				authorId: 4,
-				rating: 5,
+				authorId: 7,
+				rating: 5.0,
 				ratingCount: 8424,
 				currentPrice: 0,
 				discountPrice: 0,
@@ -147,7 +183,7 @@ async function up() {
 				title: 'english',
 				description:
 					'Biznes egalariga va menejerlarga mo‘ljallangan intensiv ingliz tili kursi. Bu kursda ingliz tilida samarali biznes muloqotini o‘rganasiz va kompaniya daromadlarini ikki karra oshirishga yordam beradigan strategiyalarni kashf qilasiz.',
-				authorId: 3,
+				authorId: 8,
 				rating: 4.8,
 				ratingCount: 158,
 				currentPrice: 3000000,
@@ -159,7 +195,7 @@ async function up() {
 				title: 'telegramBot',
 				description:
 					'Telegram botlarni yaratish va biznes jarayonlarini avtomatlashtirishni o‘rganing. Ushbu kursda siz Telegram botlarini yaratishdan tortib, biznesni qo‘llab-quvvatlash va mijozlar bilan samarali aloqalar o‘rnatishgacha bo‘lgan barcha bosqichlarni o‘rganasiz.',
-				authorId: 1,
+				authorId: 9,
 				rating: 4.7,
 				ratingCount: 6591,
 				currentPrice: 0,
@@ -185,7 +221,7 @@ async function up() {
 				forEver: true,
 				hours: 7,
 				videos: 5,
-				certificate: true,
+				certificate: false,
 				courseId: 2,
 			},
 			{
@@ -217,7 +253,7 @@ async function up() {
 				forEver: true,
 				hours: 24,
 				videos: 14,
-				certificate: true,
+				certificate: false,
 				courseId: 6,
 			},
 			{
@@ -225,7 +261,7 @@ async function up() {
 				forEver: true,
 				hours: 10,
 				videos: 8,
-				certificate: true,
+				certificate: false,
 				courseId: 7,
 			},
 			{
@@ -241,7 +277,7 @@ async function up() {
 				forEver: true,
 				hours: 11,
 				videos: 7,
-				certificate: true,
+				certificate: false,
 				courseId: 9,
 			},
 		],
@@ -250,198 +286,234 @@ async function up() {
 	await prisma.comment.createMany({
 		data: [
 			{
+				commentWriterImgUrl: '/speaker-1.png',
 				writtenBy: 'Abduvosiq Abdumalikov',
 				comment: "Zo'r gap yo'q",
 				courseId: 1,
 			},
 			{
+				commentWriterImgUrl: '/speaker-2.png',
 				writtenBy: 'Abduvosiq Abdumalikov',
 				comment: "Rahmat, kurs zo'r ekan",
 				courseId: 1,
 			},
 			{
+				commentWriterImgUrl: '/speaker-3.png',
 				writtenBy: 'Otabek Nasrullayev',
 				comment:
 					"Juda yaxshi faqat videoda qandaydir shovqin bor juda tiniq emas ovoz. Lekin baribir zo'r !!!",
 				courseId: 1,
 			},
 			{
+				commentWriterImgUrl: '/speaker-4.png',
 				writtenBy: 'Farrux Turgunov',
 				comment:
 					"Lekin yana bitta taklif bu shunday platformalaringizga kirganda qanday darsni boshlash kerak ro'yxatdan qanday o'tish kerak shu bo'yicha xam instruksiya qilib joylab qo'ysangizlar nur ustiga a'lo nur bo'lar edi. Sababi birinchi kirgan odam ozgina adashar ekan bu endi meni bir foydalanuvchi sifatida bergan taklifim.",
 				courseId: 1,
 			},
 			{
+				commentWriterImgUrl: '/speaker-1.png',
 				writtenBy: 'Abduvosiq Abdumalikov',
 				comment: "Zo'r gap yo'q",
 				courseId: 2,
 			},
 			{
+				commentWriterImgUrl: '/speaker-2.png',
 				writtenBy: 'Abduvosiq Abdumalikov',
 				comment: "Rahmat, kurs zo'r ekan",
 				courseId: 2,
 			},
 			{
+				commentWriterImgUrl: '/speaker-3.png',
 				writtenBy: 'Otabek Nasrullayev',
 				comment:
 					"Juda yaxshi faqat videoda qandaydir shovqin bor juda tiniq emas ovoz. Lekin baribir zo'r !!!",
 				courseId: 2,
 			},
 			{
+				commentWriterImgUrl: '/speaker-4.png',
 				writtenBy: 'Farrux Turgunov',
 				comment:
 					"Lekin yana bitta taklif bu shunday platformalaringizga kirganda qanday darsni boshlash kerak ro'yxatdan qanday o'tish kerak shu bo'yicha xam instruksiya qilib joylab qo'ysangizlar nur ustiga a'lo nur bo'lar edi. Sababi birinchi kirgan odam ozgina adashar ekan bu endi meni bir foydalanuvchi sifatida bergan taklifim.",
 				courseId: 2,
 			},
 			{
+				commentWriterImgUrl: '/speaker-1.png',
 				writtenBy: 'Abduvosiq Abdumalikov',
 				comment: "Zo'r gap yo'q",
 				courseId: 3,
 			},
 			{
+				commentWriterImgUrl: '/speaker-2.png',
 				writtenBy: 'Abduvosiq Abdumalikov',
 				comment: "Rahmat, kurs zo'r ekan",
 				courseId: 3,
 			},
 			{
+				commentWriterImgUrl: '/speaker-3.png',
 				writtenBy: 'Otabek Nasrullayev',
 				comment:
 					"Juda yaxshi faqat videoda qandaydir shovqin bor juda tiniq emas ovoz. Lekin baribir zo'r !!!",
 				courseId: 3,
 			},
 			{
+				commentWriterImgUrl: '/speaker-4.png',
 				writtenBy: 'Farrux Turgunov',
 				comment:
 					"Lekin yana bitta taklif bu shunday platformalaringizga kirganda qanday darsni boshlash kerak ro'yxatdan qanday o'tish kerak shu bo'yicha xam instruksiya qilib joylab qo'ysangizlar nur ustiga a'lo nur bo'lar edi. Sababi birinchi kirgan odam ozgina adashar ekan bu endi meni bir foydalanuvchi sifatida bergan taklifim.",
 				courseId: 3,
 			},
 			{
+				commentWriterImgUrl: '/speaker-1.png',
 				writtenBy: 'Abduvosiq Abdumalikov',
 				comment: "Zo'r gap yo'q",
 				courseId: 4,
 			},
 			{
+				commentWriterImgUrl: '/speaker-2.png',
 				writtenBy: 'Abduvosiq Abdumalikov',
 				comment: "Rahmat, kurs zo'r ekan",
 				courseId: 4,
 			},
 			{
+				commentWriterImgUrl: '/speaker-3.png',
 				writtenBy: 'Otabek Nasrullayev',
 				comment:
 					"Juda yaxshi faqat videoda qandaydir shovqin bor juda tiniq emas ovoz. Lekin baribir zo'r !!!",
 				courseId: 4,
 			},
 			{
+				commentWriterImgUrl: '/speaker-4.png',
 				writtenBy: 'Farrux Turgunov',
 				comment:
 					"Lekin yana bitta taklif bu shunday platformalaringizga kirganda qanday darsni boshlash kerak ro'yxatdan qanday o'tish kerak shu bo'yicha xam instruksiya qilib joylab qo'ysangizlar nur ustiga a'lo nur bo'lar edi. Sababi birinchi kirgan odam ozgina adashar ekan bu endi meni bir foydalanuvchi sifatida bergan taklifim.",
 				courseId: 4,
 			},
 			{
+				commentWriterImgUrl: '/speaker-1.png',
 				writtenBy: 'Abduvosiq Abdumalikov',
 				comment: "Zo'r gap yo'q",
 				courseId: 5,
 			},
 			{
+				commentWriterImgUrl: '/speaker-2.png',
 				writtenBy: 'Abduvosiq Abdumalikov',
 				comment: "Rahmat, kurs zo'r ekan",
 				courseId: 5,
 			},
 			{
+				commentWriterImgUrl: '/speaker-3.png',
 				writtenBy: 'Otabek Nasrullayev',
 				comment:
 					"Juda yaxshi faqat videoda qandaydir shovqin bor juda tiniq emas ovoz. Lekin baribir zo'r !!!",
 				courseId: 5,
 			},
 			{
+				commentWriterImgUrl: '/speaker-4.png',
 				writtenBy: 'Farrux Turgunov',
 				comment:
 					"Lekin yana bitta taklif bu shunday platformalaringizga kirganda qanday darsni boshlash kerak ro'yxatdan qanday o'tish kerak shu bo'yicha xam instruksiya qilib joylab qo'ysangizlar nur ustiga a'lo nur bo'lar edi. Sababi birinchi kirgan odam ozgina adashar ekan bu endi meni bir foydalanuvchi sifatida bergan taklifim.",
 				courseId: 5,
 			},
 			{
+				commentWriterImgUrl: '/speaker-1.png',
 				writtenBy: 'Abduvosiq Abdumalikov',
 				comment: "Zo'r gap yo'q",
 				courseId: 6,
 			},
 			{
+				commentWriterImgUrl: '/speaker-2.png',
 				writtenBy: 'Abduvosiq Abdumalikov',
 				comment: "Rahmat, kurs zo'r ekan",
 				courseId: 6,
 			},
 			{
+				commentWriterImgUrl: '/speaker-3.png',
 				writtenBy: 'Otabek Nasrullayev',
 				comment:
 					"Juda yaxshi faqat videoda qandaydir shovqin bor juda tiniq emas ovoz. Lekin baribir zo'r !!!",
 				courseId: 6,
 			},
 			{
+				commentWriterImgUrl: '/speaker-4.png',
 				writtenBy: 'Farrux Turgunov',
 				comment:
 					"Lekin yana bitta taklif bu shunday platformalaringizga kirganda qanday darsni boshlash kerak ro'yxatdan qanday o'tish kerak shu bo'yicha xam instruksiya qilib joylab qo'ysangizlar nur ustiga a'lo nur bo'lar edi. Sababi birinchi kirgan odam ozgina adashar ekan bu endi meni bir foydalanuvchi sifatida bergan taklifim.",
 				courseId: 6,
 			},
 			{
+				commentWriterImgUrl: '/speaker-1.png',
 				writtenBy: 'Abduvosiq Abdumalikov',
 				comment: "Zo'r gap yo'q",
 				courseId: 7,
 			},
 			{
+				commentWriterImgUrl: '/speaker-2.png',
 				writtenBy: 'Abduvosiq Abdumalikov',
 				comment: "Rahmat, kurs zo'r ekan",
 				courseId: 7,
 			},
 			{
+				commentWriterImgUrl: '/speaker-3.png',
 				writtenBy: 'Otabek Nasrullayev',
 				comment:
 					"Juda yaxshi faqat videoda qandaydir shovqin bor juda tiniq emas ovoz. Lekin baribir zo'r !!!",
 				courseId: 7,
 			},
 			{
+				commentWriterImgUrl: '/speaker-4.png',
 				writtenBy: 'Farrux Turgunov',
 				comment:
 					"Lekin yana bitta taklif bu shunday platformalaringizga kirganda qanday darsni boshlash kerak ro'yxatdan qanday o'tish kerak shu bo'yicha xam instruksiya qilib joylab qo'ysangizlar nur ustiga a'lo nur bo'lar edi. Sababi birinchi kirgan odam ozgina adashar ekan bu endi meni bir foydalanuvchi sifatida bergan taklifim.",
 				courseId: 7,
 			},
 			{
+				commentWriterImgUrl: '/speaker-1.png',
 				writtenBy: 'Abduvosiq Abdumalikov',
 				comment: "Zo'r gap yo'q",
 				courseId: 8,
 			},
 			{
+				commentWriterImgUrl: '/speaker-2.png',
 				writtenBy: 'Abduvosiq Abdumalikov',
 				comment: "Rahmat, kurs zo'r ekan",
 				courseId: 8,
 			},
 			{
+				commentWriterImgUrl: '/speaker-3.png',
 				writtenBy: 'Otabek Nasrullayev',
 				comment:
 					"Juda yaxshi faqat videoda qandaydir shovqin bor juda tiniq emas ovoz. Lekin baribir zo'r !!!",
 				courseId: 8,
 			},
 			{
+				commentWriterImgUrl: '/speaker-4.png',
 				writtenBy: 'Farrux Turgunov',
 				comment:
 					"Lekin yana bitta taklif bu shunday platformalaringizga kirganda qanday darsni boshlash kerak ro'yxatdan qanday o'tish kerak shu bo'yicha xam instruksiya qilib joylab qo'ysangizlar nur ustiga a'lo nur bo'lar edi. Sababi birinchi kirgan odam ozgina adashar ekan bu endi meni bir foydalanuvchi sifatida bergan taklifim.",
 				courseId: 8,
 			},
 			{
+				commentWriterImgUrl: '/speaker-1.png',
 				writtenBy: 'Abduvosiq Abdumalikov',
 				comment: "Zo'r gap yo'q",
 				courseId: 9,
 			},
 			{
+				commentWriterImgUrl: '/speaker-2.png',
 				writtenBy: 'Abduvosiq Abdumalikov',
 				comment: "Rahmat, kurs zo'r ekan",
 				courseId: 9,
 			},
 			{
+				commentWriterImgUrl: '/speaker-3.png',
 				writtenBy: 'Otabek Nasrullayev',
 				comment:
 					"Juda yaxshi faqat videoda qandaydir shovqin bor juda tiniq emas ovoz. Lekin baribir zo'r !!!",
 				courseId: 9,
 			},
 			{
+				commentWriterImgUrl: '/speaker-4.png',
 				writtenBy: 'Farrux Turgunov',
 				comment:
 					"Lekin yana bitta taklif bu shunday platformalaringizga kirganda qanday darsni boshlash kerak ro'yxatdan qanday o'tish kerak shu bo'yicha xam instruksiya qilib joylab qo'ysangizlar nur ustiga a'lo nur bo'lar edi. Sababi birinchi kirgan odam ozgina adashar ekan bu endi meni bir foydalanuvchi sifatida bergan taklifim.",
@@ -1057,7 +1129,69 @@ async function up() {
 			},
 		],
 	})
+
+	await prisma.category_Tags.createMany({
+		data: [
+			{
+				tag: 'business',
+				courseId: 1,
+			},
+			{
+				tag: 'business',
+				courseId: 2,
+			},
+			{
+				tag: 'free',
+				courseId: 2,
+			},
+			{
+				tag: 'business',
+				courseId: 3,
+			},
+			{
+				tag: 'marketing',
+				courseId: 3,
+			},
+			{
+				tag: 'marketing',
+				courseId: 4,
+			},
+			{
+				tag: 'management',
+				courseId: 5,
+			},
+			{
+				tag: 'programming',
+				courseId: 6,
+			},
+			{
+				tag: 'free',
+				courseId: 6,
+			},
+			{
+				tag: 'marketing',
+				courseId: 7,
+			},
+			{
+				tag: 'free',
+				courseId: 7,
+			},
+			{
+				tag: 'foreignLang',
+				courseId: 8,
+			},
+			{
+				tag: 'programming',
+				courseId: 9,
+			},
+			{
+				tag: 'free',
+				courseId: 9,
+			},
+		],
+	})
 }
+;``
 
 async function down() {
 	// Mysql
@@ -1069,6 +1203,7 @@ async function down() {
 	await prisma.$executeRaw`TRUNCATE TABLE \`course\`;`
 	await prisma.$executeRaw`TRUNCATE TABLE \`course_param\`;`
 	await prisma.$executeRaw`TRUNCATE TABLE \`profit\`;`
+	await prisma.$executeRaw`TRUNCATE TABLE \`category_tags\`;`
 	await prisma.$executeRaw`SET foreign_key_checks = 1;`
 }
 

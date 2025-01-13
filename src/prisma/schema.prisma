@@ -10,8 +10,9 @@ datasource db {
 model Course {
   id Int @id @default(autoincrement())
 
-  title       String @db.VarChar(255)
-  description String @db.VarChar(500)
+  categoryTags Category_Tags[]
+  title        String          @db.VarChar(255)
+  description  String          @db.VarChar(500)
 
   author   Speaker @relation(fields: [authorId], references: [id])
   authorId Int     @map("author_id")
@@ -51,8 +52,9 @@ model Speaker {
 model Comment {
   id Int @id @default(autoincrement())
 
-  comment   String @db.Text
-  writtenBy String @map("written_by")
+  commentWriterImgUrl String
+  comment             String @db.Text
+  writtenBy           String @map("written_by")
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
@@ -111,4 +113,13 @@ model Course_Param {
 
   course   Course @relation(fields: [courseId], references: [id])
   courseId Int    @unique @map("course_id")
+}
+
+model Category_Tags {
+  id Int @id @default(autoincrement())
+
+  tag String
+
+  course   Course @relation(fields: [courseId], references: [id])
+  courseId Int    @map("category_id")
 }

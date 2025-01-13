@@ -9,11 +9,11 @@ import {
 } from '../../ui'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/routing'
 
 import cursorImg from '../../../../public/cursor.png'
 import ellipseImg from '../../../../public/ellipse.png'
 import profileImg from '../../../../public/profile.svg'
-import { Link } from '@/i18n/routing'
 
 export const Hero: React.FC = () => {
 	const t = useTranslations()

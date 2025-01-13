@@ -3,6 +3,7 @@ import { BookMark, Star, View } from './svgs'
 import { Button } from './buttons'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/routing'
+import { Course, Course_Param, Speaker } from '@prisma/client'
 
 type Props = {
 	id: number
@@ -51,7 +52,9 @@ export const CourseBlock: React.FC<Props> = ({
 					<div className='flex items-center gap-2'>
 						<Star width={16} height={15} />
 						<span className='flex justify-center items-center'>
-							<p className='text-blue-primary'>{rating}</p>
+							<p className='text-blue-primary'>
+								{new Intl.NumberFormat('en-US', { minimumFractionDigits: 1 }).format(rating)}
+							</p>
 							<p className='text-blue-primary/50 pl-1'>
 								({new Intl.NumberFormat('ru-Ru').format(ratingCount)})
 							</p>

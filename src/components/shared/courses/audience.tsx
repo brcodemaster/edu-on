@@ -1,8 +1,9 @@
 import { Check } from '@/components/ui'
+import { Audience as AudienceOne } from '@prisma/client'
 import { useTranslations } from 'next-intl'
 
 type Props = {
-	audience: string[]
+	audience: AudienceOne[]
 }
 
 export const Audience: React.FC<Props> = ({ audience }) => {
@@ -14,11 +15,11 @@ export const Audience: React.FC<Props> = ({ audience }) => {
 			{audience &&
 				audience.map(forWhom => (
 					<p
-						key={forWhom}
+						key={forWhom.id}
 						className='flex items-center gap-2 pt-2 text-lg text-gray-primary font-medium max-mobile:text-base'
 					>
 						<Check />
-						{forWhom}
+						{forWhom.audience}
 					</p>
 				))}
 		</>

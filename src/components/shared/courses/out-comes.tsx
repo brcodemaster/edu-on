@@ -1,8 +1,9 @@
 import { Check } from '@/components/ui'
+import { Profit } from '@prisma/client'
 import { useTranslations } from 'next-intl'
 
 type Props = {
-	outComes: string[]
+	outComes: Profit[]
 }
 
 export const OutComes: React.FC<Props> = ({ outComes }) => {
@@ -14,11 +15,11 @@ export const OutComes: React.FC<Props> = ({ outComes }) => {
 			{outComes &&
 				outComes.map(outCome => (
 					<p
-						key={outCome}
+						key={outCome.id}
 						className='flex items-center gap-2 pt-2 text-lg text-gray-primary font-medium max-mobile:text-base'
 					>
 						<Check />
-						{outCome}
+						{outCome.profit}
 					</p>
 				))}
 		</>

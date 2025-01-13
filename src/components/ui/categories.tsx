@@ -4,9 +4,16 @@ import { categories } from '../constants'
 import { CategoryBrick } from './category-brick'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useTranslations } from 'next-intl'
+import { useState } from 'react'
 
-export const Categories: React.FC = () => {
+type Props = {
+	handleChangeCategory: (category: string) => void
+}
+
+export const Categories: React.FC<Props> = ({ handleChangeCategory }) => {
 	const t = useTranslations('categories')
+
+	const [activeCategory, setActiveCategory] = useState('all')
 
 	return (
 		<div className='w-full relative'>
@@ -20,8 +27,15 @@ export const Categories: React.FC = () => {
 			>
 				{categories &&
 					categories.map(category => (
-						<SwiperSlide key={category.title} className='w-auto'>
-							<CategoryBrick title={t(`${category.title}`)} />
+						<SwiperSlide
+							key={category.title}
+							className='w-auto'
+							onClick={() => {
+								handleChangeCategory(category.title)
+								setActiveCategory(category.title)
+							}}
+						>
+							<CategoryBrick title={t(`${category.title}`)} activeCategory={activeCategory} />
 						</SwiperSlide>
 					))}
 			</Swiper>

@@ -2,25 +2,39 @@ import { Star, View } from '@/components/ui'
 import { useTranslations } from 'next-intl'
 
 type Props = {
-	author: string
+	authorName: string
+	authorLastName: string
 	rating: number
-	comments: number
+	ratingCount: number
 	views: number
 }
 
-export const ParamsOfCourse: React.FC<Props> = ({ author, rating, comments, views }) => {
+export const ParamsOfCourse: React.FC<Props> = ({
+	authorName,
+	authorLastName,
+	rating,
+	ratingCount,
+	views,
+}) => {
 	const t = useTranslations('coursesTitle')
+
+	const firstLetterOfLastName = authorLastName.split('').slice(0, 1)
 
 	return (
 		<div className='pt-14 font-medium text-blue-primary flex items-center justify-between text-2xl max-w-[646px] border-b border-b-border pb-9 max-mobile:gap-3 max-mobile:text-base max-mobile:pt-3 max-mobile:pb-5'>
 			<span className='text-black'>
-				{t('author')}: <span>{author}</span>
+				{t('author')}:{' '}
+				<span>
+					{authorName} {firstLetterOfLastName}.
+				</span>
 			</span>
 			<span className='flex items-center gap-1'>
-				<Star width={16} height={15} /> {rating} <span className='opacity-50'>({comments})</span>
+				<Star width={16} height={15} />{' '}
+				{new Intl.NumberFormat('en-US', { minimumFractionDigits: 1 }).format(rating)}{' '}
+				<span className='opacity-50'>({new Intl.NumberFormat('ru-Ru').format(ratingCount)})</span>
 			</span>
 			<span className='flex items-center gap-1'>
-				<View /> {views}
+				<View /> {new Intl.NumberFormat('ru-Ru').format(views)}
 			</span>
 		</div>
 	)

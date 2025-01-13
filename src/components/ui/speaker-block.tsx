@@ -29,6 +29,8 @@ export const SpeakerBlock: React.FC<Props> = ({
 }) => {
 	const t = useTranslations()
 
+	const firstLetterOfLastName = lastName.split('').slice(0, 1)
+
 	return (
 		<div
 			className={cn(
@@ -47,13 +49,14 @@ export const SpeakerBlock: React.FC<Props> = ({
 			</div>
 			<div className='w-full flex flex-col items-center'>
 				<p className='text-black font-medium text-[20px]'>
-					{`${name} ${lastName.split('').slice(0)[0]}.`}
+					{name} {firstLetterOfLastName}.
 				</p>
 				<p className='text-gray-primary font-medium text-sm'>{specialist}</p>
 				<p className='text-gray-primary font-medium text-sm'>{company}</p>
 			</div>
 			<div className='flex gap-2 items-center text-blue-primary font-medium'>
-				<Star width={16} height={15} /> {rating}{' '}
+				<Star width={16} height={15} />{' '}
+				{new Intl.NumberFormat('en-US', { minimumFractionDigits: 1 }).format(rating)}{' '}
 				<p className='text-blue-primary/50'>
 					({new Intl.NumberFormat('ru-Ru').format(ratingCount)})
 				</p>

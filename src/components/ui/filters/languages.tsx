@@ -6,7 +6,7 @@ import { FilterCheckbox } from '../inputs/filter-checkbox'
 import { FiltersProps } from './filter'
 import { ArrowToBottom } from '../arrows'
 import { cn } from '@/lib/utils'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 type Props = {
 	defaults: FiltersProps
@@ -19,6 +19,11 @@ type Props = {
 }
 
 export const Languages: React.FC<Props> = ({ onChange, defaults }) => {
+	useEffect(() => {
+		const isOpened = localStorage.getItem('langIsOpen') === 'true'
+		setShow(isOpened)
+	}, [])
+
 	const [show, setShow] = useState(false)
 
 	const t = useTranslations('languageBlock')
@@ -34,7 +39,15 @@ export const Languages: React.FC<Props> = ({ onChange, defaults }) => {
 		>
 			<div
 				className='flex justify-between items-center cursor-pointer'
-				onClick={() => setShow(!show)}
+				onClick={() => {
+					if (show === false) {
+						setShow(true)
+						localStorage.setItem('langIsOpen', 'true')
+					} else {
+						setShow(false)
+						localStorage.setItem('langIsOpen', '')
+					}
+				}}
 			>
 				<span className='text-gray-primary font-medium'>{t('language')}</span>
 				<ArrowToBottom

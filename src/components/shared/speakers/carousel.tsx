@@ -20,7 +20,7 @@ export const Carousel: React.FC = () => {
 			.finally(() => setLoading(false))
 	}, [])
 
-	if (!error) {
+	if (error) {
 		console.log('Ошибка при поиске учителей: ' + error)
 
 		return (

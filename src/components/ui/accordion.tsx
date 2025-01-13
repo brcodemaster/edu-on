@@ -16,7 +16,7 @@ export const Accordion: React.FC<Props> = ({ text, description, className }) => 
 	return (
 		<div
 			className={cn(
-				'w-full rounded-[14px] bg-gray-primary/5 py-[24px] px-[30px] text-2xl text-gray-dark font-medium flex flex-col justify-between items-center cursor-pointer overflow-hidden max-mobile:text-lg',
+				'w-full rounded-[14px] bg-gray-primary/5 py-[24px] px-[30px] text-2xl text-gray-dark font-medium flex flex-col justify-between items-center cursor-pointer overflow-hidden max-mobile:text-lg select-none',
 				className
 			)}
 			onClick={() => {
@@ -25,11 +25,14 @@ export const Accordion: React.FC<Props> = ({ text, description, className }) => 
 		>
 			<div className='flex justify-between items-center gap-5 w-full text-balance'>
 				{text}
-				<Plus className={cn(isOpened && 'rotate-[135deg] fill-[#EB5757]')} />
+				<Plus
+					className={cn(isOpened && 'rotate-[135deg] fill-[#EB5757]')}
+					fill={isOpened ? 'red' : 'blue'}
+				/>
 			</div>
 			<div
 				className={cn(
-					'duration-200 h-0 invisible opacity-0 text-gray-primary text-xl max-mobile:text-base text-balance',
+					'duration-100 h-0 invisible opacity-0 text-gray-primary text-xl max-mobile:text-base text-balance',
 					isOpened && 'h-auto visible opacity-100 py-[18px]'
 				)}
 			>

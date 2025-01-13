@@ -12,14 +12,14 @@ export const Carousel: React.FC = () => {
 	const [error, setError] = useState<string | null>(null)
 
 	useEffect(() => {
-		Api.courses
+		Api.topCourses
 			.search()
 			.then(data => setTopCourses(data))
 			.catch(error => setError(error))
 			.finally(() => setLoading(false))
 	}, [])
 
-	if (!error) {
+	if (error) {
 		console.log('Ошибка при поиске топовых курсов: ' + error)
 
 		return (

@@ -38,11 +38,12 @@ export const CourseBlock: React.FC<Props> = ({
 				<span className='text-gray-primary font-medium text-2xl flex gap-1 pt-7 flex-col items-start'>
 					{discountPrice > 0 && (
 						<div className='text-lg text-blue-primary line-through font-medium'>
-							{discountPrice} so&apos;m
+							{new Intl.NumberFormat('ru-Ru').format(discountPrice)} so&apos;m
 						</div>
 					)}
 					<div className='flex items-center gap-1'>
-						<p className='text-black/80'>{price}</p> so&apos;m
+						<p className='text-black/80'>{new Intl.NumberFormat('ru-Ru').format(price)}</p>{' '}
+						so&apos;m
 					</div>
 				</span>
 				<Button variant='secondary' className='font-medium w-full mt-6'>

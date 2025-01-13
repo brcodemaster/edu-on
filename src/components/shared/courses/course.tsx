@@ -1,62 +1,40 @@
 'use client'
 
 import { newCourses } from '@/components/constants'
-import { CourseBlock, SpeakerBlock } from '@/components/ui'
+import { CourseBlock, SkeletonCourse, SkeletonSpeaker, SpeakerBlock } from '@/components/ui'
+import { Api } from '@/services/api-client'
+import { CourseWithRelations } from '@/types/types'
+import { Speaker } from '@prisma/client'
 import { useTranslations } from 'next-intl'
+import { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-const s = {
-	id: 1,
-	title: 'CRM',
-	description:
-		"Kompaniya daromadini 2 karraga ko'tarishni istaysizmi? Biznes egalari, top menejer, tadbirkorlar uchun Husan Mamasaidovning 'Strategik marketing' nomli intensiv kurs",
-	author: {
-		name: 'Husan M.',
-		specialist: 'Biznes',
-		imgUrl: '/speaker-2.png',
-		alt: 'Husan M.',
-		company: 'MFaktor',
-		rating: 4.6,
-		comments: 1011,
-	},
-	rating: 4.2,
-	comments: 12965,
-	views: 54112,
-	price: 2750000,
-	outcomes: [
-		'CRM sistema o’rnatilsa biznes qanday foydalar ko’rishini',
-		'Sistemani qayerlardan o’rnatsa bo’lishini',
-		'Nega CRM ga o’tish shart ekanligini',
-		'CRM orqali LTVni hisoblash usullarini',
-		'LTVni oshiruvchi bir qancha ishlovchi keyslarni',
-	],
-	audience: [
-		'500,000$ aylanmaga ega bo’lgan tadbirkorlar',
-		'CEO yoki kompaniyaning bosh marketologlari',
-		'IT sohasidagi katta kompaniyalar CTO si',
-		'Senior leveldagi dasturchilar',
-	],
-	contents: [
-		'Strategik marketing (treyler)',
-		'SWOT analiz qilish',
-		'Ish muhiti',
-		"Biznesda politika qanday bo'ladi",
-		'Bir burun qoidasi',
-		'Fundamental marketing',
-		'Mijozlarimizning umrlik qiymati',
-	],
-	atCourse: {
-		forEver: true,
-		hours: 12.5,
-		videos: 7,
-		certificate: true,
-	},
-	imgUrl: '/courses-photo-1.png',
-	alt: 'CRM in business',
+type Props = {
+	id: string
+	speaker: Speaker
 }
 
-export const Course: React.FC = () => {
+export const Course: React.FC<Props> = ({ id, speaker }) => {
 	const t = useTranslations()
+	const [courses, setCourses] = useState<CourseWithRelations[]>([])
+	const [loading, setLoading] = useState(true)
+	const [error, setError] = useState<string | null>(null)
+
+	useEffect(() => {
+		Api.courses
+			.search()
+			.then(data => setCourses(data))
+			.catch(err => setError(err.message))
+			.finally(() => setLoading(false))
+	}, [])
+
+	if (error) {
+		console.log('Ошибка при поиске учителей: ' + error)
+
+		return (
+			<div className='bg-red-500 text-white font-medium w-[200px] h-auto text-center'>Error</div>
+		)
+	}
 
 	return (
 		<>
@@ -64,16 +42,19 @@ export const Course: React.FC = () => {
 				{t('speakerAndSimilar')}
 			</p>
 			<div className='flex items-center gap-5 h-full relative max-mobile:flex-col'>
-				<SpeakerBlock
-					name={s.author.name}
-					imgUrl={s.author.imgUrl}
-					alt={s.author.alt}
-					comments={s.author.comments}
-					company={s.author.company}
-					rating={s.author.rating}
-					specialist={s.author.specialist}
-					className='h-[350px] w-[192px] shrink-0 max-mobile:h-[280px]'
-				/>
+				<div className='w-[192px]'>
+					<SpeakerBlock
+						name={speaker.name}
+						lastName={speaker.lastName}
+						specialist={speaker.teach}
+						company={speaker.ownCompany}
+						rating={speaker.rating}
+						ratingCount={speaker.ratingCount}
+						imgUrl={speaker.imgUrl}
+						alt={speaker.name + String(speaker.id)}
+						className='h-[350px] w-[192px] shrink-0 max-mobile:h-[280px]'
+					/>
+				</div>
 				<div className='h-[350px] overflow-hidden max-mobile:w-full'>
 					<div className='absolute left-[211px] max-mobile:left-0 top-0 bg-gradient-to-r from-white to-transparent w-6 h-full z-[5]' />
 					<div className='absolute right-0 top-0 bg-gradient-to-l from-white to-transparent w-6 h-full z-[5]' />
@@ -84,20 +65,27 @@ export const Course: React.FC = () => {
 						slidesPerView='auto'
 						navigation={{ nextEl: '.swiper-button-next-3', prevEl: '.swiper-button-prev-3' }}
 					>
-						{newCourses &&
-							newCourses.map(newCourse => (
+						{loading &&
+							Array.from({ length: 2 }, (_, ind) => (
+								<SwiperSlide key={ind} className='w-[280px] h-full mr-[30px]'>
+									<SkeletonCourse />
+								</SwiperSlide>
+							))}
+
+						{courses &&
+							courses.map(newCourse => (
 								<SwiperSlide key={newCourse.title} className='w-[280px] h-full'>
 									<CourseBlock
-										id={String(newCourse.id)}
+										id={newCourse.id}
 										key={newCourse.title}
 										imgUrl={newCourse.imgUrl}
 										alt={newCourse.alt}
 										title={newCourse.title}
-										comments={newCourse.comments}
-										price={newCourse.price}
+										ratingCount={newCourse.ratingCount}
+										price={newCourse.currentPrice}
 										discountPrice={newCourse.discountPrice}
 										rating={newCourse.rating}
-										views={newCourse.views}
+										views={newCourse.courseParam.views}
 									/>
 								</SwiperSlide>
 							))}
