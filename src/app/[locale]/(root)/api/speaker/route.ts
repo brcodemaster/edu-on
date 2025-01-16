@@ -17,9 +17,9 @@ export async function GET(req: NextRequest) {
 
 			return NextResponse.json(response, { status: 200 })
 		}
-	} catch (error: any) {
-		console.log(error)
+	} catch (error) {
+		const err = error instanceof Error ? error : new Error('Ошибка speaker server')
 
-		return NextResponse.json({ error: error.message }, { status: 500 })
+		return NextResponse.json({ error: err.message }, { status: 500 })
 	}
 }

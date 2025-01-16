@@ -1,15 +1,5 @@
-import { newCourses } from '@/components/constants'
-import {
-	Categories,
-	CourseBlock,
-	Filter,
-	Pagination,
-	Section,
-	SwitchCase,
-	TitleWithDescription,
-} from '@/components/ui'
+import { Section, SwitchCase, TitleWithDescription } from '@/components/ui'
 import { useTranslations } from 'next-intl'
-import { useState } from 'react'
 import { FilteredCourses } from './filtered-courses'
 
 export default function Courses() {
@@ -31,7 +21,6 @@ export default function Courses() {
 				/>
 			</div>
 			<div className='border-t border-t-border mt-[54px] pt-[36px] w-full flex justify-between items-start gap-[54px] max-tablet:flex-col max-tablet:gap-5 max-mobile:gap-4'>
-				<Filter />
 				<FilteredCourses />
 			</div>
 		</Section>

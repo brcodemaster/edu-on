@@ -1,7 +1,6 @@
 'use client'
 
-import { newCourses } from '@/components/constants'
-import { CourseBlock, SkeletonCourse, SkeletonSpeaker, SpeakerBlock } from '@/components/ui'
+import { CourseBlock, SkeletonCourse, SpeakerBlock } from '@/components/ui'
 import { Api } from '@/services/api-client'
 import { CourseWithRelations } from '@/types/types'
 import { Speaker } from '@prisma/client'
@@ -14,7 +13,7 @@ type Props = {
 	speaker: Speaker
 }
 
-export const Course: React.FC<Props> = ({ id, speaker }) => {
+export const Course: React.FC<Props> = ({ speaker }) => {
 	const t = useTranslations()
 	const [courses, setCourses] = useState<CourseWithRelations[]>([])
 	const [loading, setLoading] = useState(true)

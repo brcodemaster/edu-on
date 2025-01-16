@@ -1,15 +1,17 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Languages, Ratings, Slices, FilterSelect, Range } from './'
 import { Button } from '../buttons'
 import { useTranslations } from 'next-intl'
 import qs from 'qs'
 import { useRouter, useSearchParams } from 'next/navigation'
+import { CourseWithTag } from '@/services/filtered-course'
+import { Api } from '@/services/api-client'
 
 export type FiltersProps = {
 	sortBy?: string
-	price: { priceFrom?: number; priceTo?: number }
+	price: { priceFrom: number | null; priceTo: number | null }
 	ratings: string[]
 	languages: string[]
 	slices: string[]
@@ -24,17 +26,21 @@ interface QueryFilters {
 	slices: string
 }
 
-export const Filter: React.FC = () => {
+type Props = {
+	handleCourses: (courses: CourseWithTag[]) => void
+}
+
+export const Filter: React.FC<Props> = ({ handleCourses }) => {
 	const router = useRouter()
 	const params = useSearchParams() as unknown as Map<keyof QueryFilters, string>
 
 	const t = useTranslations()
 
 	const [filtersValues, setFiltersValues] = useState<FiltersProps>({
-		sortBy: params.get('sortBy') ? params.get('sortBy') : undefined,
+		sortBy: params.get('sortBy') || undefined,
 		price: {
-			priceFrom: params.get('priceFrom') ? Number(params.get('priceFrom')) : undefined,
-			priceTo: params.get('priceTo') ? Number(params.get('priceTo')) : undefined,
+			priceFrom: Number(params.get('priceFrom')) || null,
+			priceTo: Number(params.get('priceTo')) || null,
 		},
 		ratings: params.get('ratings') ? params.get('ratings')!.split(',') : [],
 		languages: params.get('languages') ? params.get('languages')!.split(',') : [],
@@ -57,11 +63,9 @@ export const Filter: React.FC = () => {
 				} else if (filterType === 'sortBy') {
 					updatedFilters.sortBy = value
 				} else if (filterType === 'price') {
-					if (price?.priceFrom && price?.priceFrom > 0) {
-						updatedFilters.price = {
-							priceFrom: price?.priceFrom ?? updatedFilters.price.priceFrom,
-							priceTo: price?.priceTo ?? updatedFilters.price.priceTo,
-						}
+					updatedFilters.price = {
+						priceFrom: price?.priceFrom ?? updatedFilters.price.priceFrom,
+						priceTo: price?.priceTo ?? updatedFilters.price.priceTo,
 					}
 				}
 			} else if (method === 'delete') {
@@ -76,21 +80,33 @@ export const Filter: React.FC = () => {
 		})
 	}
 
-	useEffect(() => {
-		const allFilters = {
+	const allFilters = useMemo(() => {
+		return {
 			sortBy: filtersValues.sortBy,
 			...filtersValues.price,
 			ratings: filtersValues.ratings,
 			languages: filtersValues.languages,
 			slices: filtersValues.slices,
 		}
+	}, [filtersValues])
 
+	useEffect(() => {
 		const query = qs.stringify(allFilters, {
 			arrayFormat: 'comma',
 		})
 
 		router.push(`?${query}`, { scroll: false })
-	}, [filtersValues, router])
+	}, [allFilters, router])
+
+	const handleClick = () => {
+		const query = qs.stringify(allFilters, {
+			arrayFormat: 'comma',
+		})
+
+		if (query) {
+			Api.filters.search(query).then(data => handleCourses(data))
+		}
+	}
 
 	return (
 		<div className='w-[254px] h-full shrink-0 max-tablet:w-full sticky top-[115px] max-tablet:static'>
@@ -100,7 +116,7 @@ export const Filter: React.FC = () => {
 				<Ratings onChange={updateFilters} defaults={filtersValues} />
 				<Languages onChange={updateFilters} defaults={filtersValues} />
 				<Slices onChange={updateFilters} defaults={filtersValues} />
-				<Button variant='primary' className='w-full mt-6 h-[61px]'>
+				<Button variant='primary' className='w-full mt-6 h-[61px]' onClick={handleClick}>
 					{t('show')}
 				</Button>
 			</div>

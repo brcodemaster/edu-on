@@ -1,11 +1,4 @@
-import {
-	Accordion,
-	Categories,
-	Section,
-	Send,
-	SwitchCase,
-	TitleWithDescription,
-} from '@/components/ui'
+import { Accordion, Section, Send, SwitchCase, TitleWithDescription } from '@/components/ui'
 import { useTranslations } from 'next-intl'
 
 export default function Page() {

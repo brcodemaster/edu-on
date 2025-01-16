@@ -3,7 +3,6 @@ import { BookMark, Star, View } from './svgs'
 import { Button } from './buttons'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/routing'
-import { Course, Course_Param, Speaker } from '@prisma/client'
 
 type Props = {
 	id: number

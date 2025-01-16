@@ -121,7 +121,7 @@ async function up() {
 				authorId: 3,
 				rating: 4.9,
 				ratingCount: 154,
-				currentPrice: 12000000,
+				currentPrice: 10000000,
 				discountPrice: 0,
 				imgUrl: '/courses-photo-3.png',
 				alt: 'LTV',
@@ -209,6 +209,7 @@ async function up() {
 	await prisma.course_Param.createMany({
 		data: [
 			{
+				whatLanguage: 'uz',
 				views: 54112,
 				forEver: true,
 				hours: 12,
@@ -217,6 +218,7 @@ async function up() {
 				courseId: 1,
 			},
 			{
+				whatLanguage: 'uz',
 				views: 114554,
 				forEver: true,
 				hours: 7,
@@ -225,6 +227,7 @@ async function up() {
 				courseId: 2,
 			},
 			{
+				whatLanguage: 'uz',
 				views: 1055,
 				forEver: true,
 				hours: 5,
@@ -233,6 +236,7 @@ async function up() {
 				courseId: 3,
 			},
 			{
+				whatLanguage: 'uz',
 				views: 17554,
 				forEver: true,
 				hours: 48,
@@ -241,6 +245,7 @@ async function up() {
 				courseId: 4,
 			},
 			{
+				whatLanguage: 'uz',
 				views: 4544,
 				forEver: true,
 				hours: 15,
@@ -249,6 +254,7 @@ async function up() {
 				courseId: 5,
 			},
 			{
+				whatLanguage: 'uz',
 				views: 12445,
 				forEver: true,
 				hours: 24,
@@ -257,6 +263,7 @@ async function up() {
 				courseId: 6,
 			},
 			{
+				whatLanguage: 'uz',
 				views: 16879,
 				forEver: true,
 				hours: 10,
@@ -265,6 +272,7 @@ async function up() {
 				courseId: 7,
 			},
 			{
+				whatLanguage: 'en',
 				views: 954,
 				forEver: true,
 				hours: 9,
@@ -273,6 +281,7 @@ async function up() {
 				courseId: 8,
 			},
 			{
+				whatLanguage: 'uz',
 				views: 45478,
 				forEver: true,
 				hours: 11,
@@ -1191,7 +1200,6 @@ async function up() {
 		],
 	})
 }
-;``
 
 async function down() {
 	// Mysql

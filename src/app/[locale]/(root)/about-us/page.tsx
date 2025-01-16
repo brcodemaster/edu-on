@@ -153,12 +153,7 @@ export default function AboutUs() {
 				/>
 			</div>
 			<div className='pt-[136px] flex items-center gap-5 max-mobile:flex-col'>
-				<ActionButton
-					icon='/location.svg'
-					alt='Location'
-					link='location'
-					title='Shota Rustaveli 6-uy'
-				/>
+				<ActionButton icon={location} alt='Location' link='location' title='Shota Rustaveli 6-uy' />
 				<ActionButton icon={phone} alt='Phone' link='Phone' title='(99) 702-00-88' />
 				<ActionButton alt='Message' link='Message' icon={message} title='eduon@gmail.com' />
 			</div>

@@ -1,14 +1,14 @@
 import { prisma } from '@/prisma/prisma-client'
-import { NextRequest, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
 
-export async function GET(req: NextRequest) {
+export async function GET() {
 	try {
 		const response = await prisma.speaker.findMany()
 
 		return NextResponse.json(response, { status: 200 })
-	} catch (error: any) {
-		console.log(error)
+	} catch (error) {
+		const err = error instanceof Error ? error : new Error('Ошибка speakers server')
 
-		return NextResponse.json({ error: error.message }, { status: 500 })
+		return NextResponse.json({ error: err.message }, { status: 500 })
 	}
 }

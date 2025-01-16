@@ -1,4 +1,3 @@
-import { Course, Speaker } from '@prisma/client'
 import { axiosInstance } from './axios-instance'
 import { ApiRoutes } from './constants'
 import { CourseWithSpeaker } from '@/components/ui/svgs/search-icon'

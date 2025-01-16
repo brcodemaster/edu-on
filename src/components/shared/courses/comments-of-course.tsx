@@ -1,6 +1,4 @@
-import { Send } from '@/components/ui'
-import { CourseWithRelations } from '@/types/types'
-import { Comment, Course } from '@prisma/client'
+import { Comment } from '@prisma/client'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 

@@ -1,4 +1,4 @@
-import { Arrows, Button, Section, Title } from '@/components/ui'
+import { Arrows, Section, Title } from '@/components/ui'
 import { Carousel } from './carousel'
 import { useTranslations } from 'next-intl'
 

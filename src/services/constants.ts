@@ -6,4 +6,5 @@ export const ApiRoutes = {
 	SEARCH_NEW_COURSES: '/newCourses',
 	SEARCH_FILTER_COURSES: '/searchCourses',
 	SEARCH_CATEGORY: '/filteredCourse',
+	SEARCH_FILTERS: './filteredByFilters',
 }

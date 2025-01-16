@@ -3,7 +3,6 @@
 import { cn } from '@/lib/utils'
 import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
-import { CourseWithRelations } from '@/types/types'
 import { Course, Speaker } from '@prisma/client'
 import { useDebounce } from '@uidotdev/usehooks'
 import { Api } from '@/services/api-client'
@@ -25,6 +24,8 @@ export const SearchIcon: React.FC = () => {
 	const tCourse = useTranslations('coursesTitle')
 
 	const debouncedSearchQuery = useDebounce(searchQuery, 300)
+
+	console.log(error)
 
 	const sendQuery = () => {
 		if (!searchQuery) {

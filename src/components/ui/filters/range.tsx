@@ -20,8 +20,8 @@ export const Range: React.FC<Props> = ({ range }) => {
 	const t = useTranslations()
 	const searchParams = useSearchParams()
 	const [prices, setPrices] = useState<number[]>([
-		Number(searchParams.get('priceFrom')),
-		Number(searchParams.get('priceTo')) > 0 ? Number(searchParams.get('priceTo')) : 10000000,
+		Number(searchParams.get('priceFrom')) || 0,
+		Number(searchParams.get('priceTo')) || 10000000,
 	])
 
 	useEffect(() => {
@@ -35,13 +35,13 @@ export const Range: React.FC<Props> = ({ range }) => {
 				<DualRangeSlider
 					value={prices}
 					onValueChange={setPrices}
-					min={50000}
+					min={0}
 					max={10000000}
 					step={50000}
 				/>
-				<div className='flex justify-between items-center pt-2'>
-					<span>{prices[0] > 0 ? prices[0] : 50000} so&apos;m</span>
-					<span>{prices[1]} so&apos;m</span>
+				<div className='flex justify-between items-center pt-2 text-[15px]'>
+					<span>{new Intl.NumberFormat('ru-RU').format(prices[0])} so&apos;m</span>
+					<span>{new Intl.NumberFormat('ru-RU').format(prices[1])} so&apos;m</span>
 				</div>
 			</div>
 		</>

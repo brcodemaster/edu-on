@@ -20,6 +20,8 @@ export async function GET(req: NextRequest) {
 
 		return NextResponse.json(courses, { status: 200 })
 	} catch (error) {
-		return NextResponse.json('Не найдено!', { status: 500 })
+		const err = error instanceof Error ? error : new Error('Ошибка searchCourses server')
+
+		return NextResponse.json(err.message, { status: 500 })
 	}
 }

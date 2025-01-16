@@ -102,11 +102,12 @@ model Content {
 model Course_Param {
   id Int @id @default(autoincrement())
 
-  views       Int
-  forEver     Boolean @map("for_ever")
-  hours       Int
-  videos      Int
-  certificate Boolean
+  views        Int
+  forEver      Boolean @map("for_ever")
+  hours        Int
+  videos       Int
+  certificate  Boolean
+  whatLanguage String  @default("uz") @map("what_language")
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
