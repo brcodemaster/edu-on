@@ -20,7 +20,7 @@ export const SearchIcon: React.FC = () => {
 	const [searchQuery, setSearchQuery] = useState('')
 	const [error, setError] = useState<string | null>(null)
 
-	const focusInput = useRef(null)
+	const focusInput = useRef<HTMLInputElement>(null)
 
 	const t = useTranslations()
 	const tCourse = useTranslations('coursesTitle')
@@ -74,6 +74,7 @@ export const SearchIcon: React.FC = () => {
 				>
 					<div className='relative'>
 						<input
+							ref={focusInput}
 							type='text'
 							name='query'
 							className='px-8 text-lg outline-none font-medium w-full h-14 duration-300 rounded-3xl border border-border shadow-inner placeholder:text-gray-primary/30'
@@ -146,6 +147,7 @@ export const SearchIcon: React.FC = () => {
 				className='cursor-pointer group'
 				onClick={() => {
 					setIsFocused(true)
+					focusInput.current?.focus()
 				}}
 			>
 				<svg
