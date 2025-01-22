@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { DualRangeSlider } from '@/components/core/slider'
 import { useTranslations } from 'next-intl'
 import { useSearchParams } from 'next/navigation'
@@ -24,8 +24,20 @@ export const Range: React.FC<Props> = ({ range }) => {
 		Number(searchParams.get('priceTo')) || 10000000,
 	])
 
+	const relPriceFrom = useRef(prices[0])
+	const relPriceTo = useRef(prices[1])
+
+	const handleRangeChange = useCallback(() => {
+		range('Price of course', 'price', 'add', false, {
+			priceFrom: relPriceFrom.current,
+			priceTo: relPriceTo.current,
+		})
+	}, [])
+
 	useEffect(() => {
-		range('Price of course', 'price', 'add', false, { priceFrom: prices[0], priceTo: prices[1] })
+		relPriceFrom.current = prices[0]
+		relPriceTo.current = prices[1]
+		handleRangeChange()
 	}, [prices])
 
 	return (

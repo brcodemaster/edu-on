@@ -13,7 +13,7 @@ type Props = {
 export const Categories: React.FC<Props> = ({ handleChangeCategory }) => {
 	const t = useTranslations('categories')
 
-	const [activeCategory, setActiveCategory] = useState('all')
+	const [activeCategory, setActiveCategory] = useState(t('all'))
 
 	return (
 		<div className='w-full relative'>
@@ -32,7 +32,8 @@ export const Categories: React.FC<Props> = ({ handleChangeCategory }) => {
 							className='w-auto'
 							onClick={() => {
 								handleChangeCategory(category.title)
-								setActiveCategory(category.title)
+								setActiveCategory(t(category.title))
+								console.log(t(category.title), activeCategory)
 							}}
 						>
 							<CategoryBrick title={t(`${category.title}`)} activeCategory={activeCategory} />

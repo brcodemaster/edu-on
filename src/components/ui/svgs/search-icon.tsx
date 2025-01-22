@@ -1,7 +1,7 @@
 'use client'
 
 import { cn } from '@/lib/utils'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { Course, Speaker } from '@prisma/client'
 import { useDebounce } from '@uidotdev/usehooks'
@@ -20,12 +20,12 @@ export const SearchIcon: React.FC = () => {
 	const [searchQuery, setSearchQuery] = useState('')
 	const [error, setError] = useState<string | null>(null)
 
+	const focusInput = useRef(null)
+
 	const t = useTranslations()
 	const tCourse = useTranslations('coursesTitle')
 
 	const debouncedSearchQuery = useDebounce(searchQuery, 300)
-
-	console.log(error)
 
 	const sendQuery = () => {
 		if (!searchQuery) {
@@ -35,7 +35,10 @@ export const SearchIcon: React.FC = () => {
 		Api.searchCourses
 			.search(debouncedSearchQuery)
 			.then(data => setCourses(data))
-			.catch(err => setError(err.message))
+			.catch(err => {
+				setError(err.message)
+				console.log(error)
+			})
 	}
 
 	useEffect(() => {
