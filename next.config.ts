@@ -3,6 +3,8 @@ import type { NextConfig } from 'next'
 
 const withNextIntl = createNextIntlPlugin()
 
-const nextConfig: NextConfig = {}
+const nextConfig: NextConfig = {
+	reactStrictMode: false,
+}
 
 export default withNextIntl(nextConfig)

@@ -567,7 +567,7 @@ export const courses = [
 	{
 		title: 'foreignLang',
 		amountOfCourse: 146,
-		icon: '/Chat.svg',
+		icon: '/chat.svg',
 		alt: 'foreignLang',
 		link: '/foreign-language',
 		disabled: true,
@@ -575,7 +575,7 @@ export const courses = [
 	{
 		title: 'business',
 		amountOfCourse: 27,
-		icon: '/Work.svg',
+		icon: '/work.svg',
 		alt: 'business',
 		link: '/business',
 		disabled: true,
@@ -583,7 +583,7 @@ export const courses = [
 	{
 		title: 'management',
 		amountOfCourse: 34,
-		icon: '/Discovery.svg',
+		icon: '/compass.svg',
 		alt: 'management',
 		link: '/management',
 		disabled: true,
@@ -591,7 +591,7 @@ export const courses = [
 	{
 		title: 'sale',
 		amountOfCourse: 49,
-		icon: '/Bag.svg',
+		icon: '/bag.svg',
 		alt: 'sale',
 		link: '/sale',
 		disabled: true,

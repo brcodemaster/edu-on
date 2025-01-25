@@ -9,9 +9,9 @@ import {
 } from '@/components/ui'
 import { useTranslations } from 'next-intl'
 
-import location from '../../../../../public/Location.svg'
-import message from '../../../../../public/Message.svg'
-import phone from '../../../../../public/Calling.svg'
+import location from '../../../../../public/location.svg'
+import message from '../../../../../public/message.svg'
+import phone from '../../../../../public/calling.svg'
 
 export default function AboutUs() {
 	const t = useTranslations()
