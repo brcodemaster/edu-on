@@ -3,28 +3,28 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model Course {
   id Int @id @default(autoincrement())
 
-  categoryTags Category_Tags[]
-  title        String          @db.VarChar(255)
-  description  String          @db.VarChar(500)
+  title       String @db.VarChar(255)
+  description String @db.Text
 
   author   Speaker @relation(fields: [authorId], references: [id])
   authorId Int     @map("author_id")
 
-  rating        Float      @default(0.0)
-  ratingCount   Int        @default(0)
+  rating        Float           @default(0.0)
+  ratingCount   Int             @default(0)
   comments      Comment[]
-  currentPrice  Float
-  discountPrice Float
+  currentPrice  Int
+  discountPrice Int             @default(0)
   profits       Profit[]
   audience      Audience[]
   contents      Content[]
+  categoryTags  Category_Tags[]
 
   imgUrl String @map("img_url")
   alt    String
@@ -122,5 +122,5 @@ model Category_Tags {
   tag String
 
   course   Course @relation(fields: [courseId], references: [id])
-  courseId Int    @map("category_id")
+  courseId Int    @map("course_id")
 }

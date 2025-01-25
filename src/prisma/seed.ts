@@ -97,7 +97,6 @@ async function up() {
 				rating: 4.2,
 				ratingCount: 12965,
 				currentPrice: 2750000,
-				discountPrice: 0,
 				imgUrl: '/courses-photo-1.png',
 				alt: 'CRM in business',
 			},
@@ -109,12 +108,10 @@ async function up() {
 				rating: 4.7,
 				ratingCount: 54110,
 				currentPrice: 0,
-				discountPrice: 0,
 				imgUrl: '/courses-photo-2.png',
 				alt: 'Business',
 			},
 			{
-				id: 3,
 				title: 'LTV',
 				description:
 					"Kompaniya daromadini 2 karraga ko'tarishni istaysizmi? Husan Mamasaidovning 'Strategik marketing' intensiv kursi orqali mijozlar bilan aloqalarni mustahkamlang va ularning umrlik qiymatini (LTV) oshirish usullarini o‘rganing.",
@@ -122,12 +119,10 @@ async function up() {
 				rating: 4.9,
 				ratingCount: 154,
 				currentPrice: 10000000,
-				discountPrice: 0,
 				imgUrl: '/courses-photo-3.png',
 				alt: 'LTV',
 			},
 			{
-				id: 4,
 				title: 'brending',
 				description:
 					"Kompaniya brendini yaratish va mustahkamlash bo‘yicha ko‘nikmalarni o‘rganing. Husan Mamasaidovning 'Brend yaratish va strategiya' kursi yordamida kompaniyaning brend aydentikasini va brendbook ni qanday yaratish kerakligini bilib oling.",
@@ -140,7 +135,6 @@ async function up() {
 				alt: 'CRM in business',
 			},
 			{
-				id: 5,
 				title: 'blog',
 				description:
 					'Blog yuritishni boshlash va uni muvaffaqiyatli boshqarish bo‘yicha amaliy kurs. Akmal P. tomonidan o‘rgatiladigan kursda blog yaratishdan tortib, uni rivojlantirish va monetizatsiyaga qadar bo‘lgan barcha jihatlar o‘rganiladi.',
@@ -148,12 +142,10 @@ async function up() {
 				rating: 4.9,
 				ratingCount: 1483,
 				currentPrice: 1000000,
-				discountPrice: 0,
 				imgUrl: '/courses-photo-5.png',
 				alt: 'Blog',
 			},
 			{
-				id: 6,
 				title: 'ux',
 				description:
 					"UX/UI dizayn asoslari va amaliyotlarini o‘rganing. Jahongir P. tomonidan o‘rgatiladigan kursda foydalanuvchi tajribasini yaratish va interfeys dizaynining eng yaxshi amaliyotlari haqida batafsil ma'lumot olasiz.",
@@ -161,12 +153,10 @@ async function up() {
 				rating: 4.4,
 				ratingCount: 1548,
 				currentPrice: 0,
-				discountPrice: 0,
 				imgUrl: '/courses-photo-6.png',
 				alt: 'UX/UI',
 			},
 			{
-				id: 7,
 				title: 'SMM',
 				description:
 					'SMM (Social Media Marketing) ning boshlang‘ich va intensiv asoslarini o‘rganing. Ravshanbekov B. tomonidan o‘rgatiladigan kursda ijtimoiy tarmoqlarda muvaffaqiyatli marketing kampaniyalarini yaratish va yuritishning eng yaxshi amaliyotlari haqida bilib olasiz.',
@@ -174,12 +164,10 @@ async function up() {
 				rating: 5.0,
 				ratingCount: 8424,
 				currentPrice: 0,
-				discountPrice: 0,
 				imgUrl: '/courses-photo-7.png',
 				alt: 'SMM',
 			},
 			{
-				id: 8,
 				title: 'english',
 				description:
 					'Biznes egalariga va menejerlarga mo‘ljallangan intensiv ingliz tili kursi. Bu kursda ingliz tilida samarali biznes muloqotini o‘rganasiz va kompaniya daromadlarini ikki karra oshirishga yordam beradigan strategiyalarni kashf qilasiz.',
@@ -199,7 +187,6 @@ async function up() {
 				rating: 4.7,
 				ratingCount: 6591,
 				currentPrice: 0,
-				discountPrice: 0,
 				imgUrl: '/courses-photo-9.png',
 				alt: 'Telegram Bot for Business',
 			},
@@ -1202,17 +1189,15 @@ async function up() {
 }
 
 async function down() {
-	// Mysql
-	await prisma.$executeRaw`SET foreign_key_checks = 0;`
-	await prisma.$executeRaw`TRUNCATE TABLE \`speaker\`;`
-	await prisma.$executeRaw`TRUNCATE TABLE \`audience\`;`
-	await prisma.$executeRaw`TRUNCATE TABLE \`comment\`;`
-	await prisma.$executeRaw`TRUNCATE TABLE \`content\`;`
-	await prisma.$executeRaw`TRUNCATE TABLE \`course\`;`
-	await prisma.$executeRaw`TRUNCATE TABLE \`course_param\`;`
-	await prisma.$executeRaw`TRUNCATE TABLE \`profit\`;`
-	await prisma.$executeRaw`TRUNCATE TABLE \`category_tags\`;`
-	await prisma.$executeRaw`SET foreign_key_checks = 1;`
+	//Postgresql
+	await prisma.$executeRaw`TRUNCATE TABLE "Speaker" RESTART IDENTITY CASCADE;`
+	await prisma.$executeRaw`TRUNCATE TABLE "Audience" RESTART IDENTITY CASCADE;`
+	await prisma.$executeRaw`TRUNCATE TABLE "Comment" RESTART IDENTITY CASCADE;`
+	await prisma.$executeRaw`TRUNCATE TABLE "Content" RESTART IDENTITY CASCADE;`
+	await prisma.$executeRaw`TRUNCATE TABLE "Course" RESTART IDENTITY CASCADE;`
+	await prisma.$executeRaw`TRUNCATE TABLE "Course_Param" RESTART IDENTITY CASCADE;`
+	await prisma.$executeRaw`TRUNCATE TABLE "Profit" RESTART IDENTITY CASCADE;`
+	await prisma.$executeRaw`TRUNCATE TABLE "Category_Tags" RESTART IDENTITY CASCADE;`
 }
 
 async function main() {
@@ -1220,7 +1205,7 @@ async function main() {
 		await down()
 		await up()
 	} catch (error) {
-		console.log('Error: ' + error)
+		console.log('Error on main: ' + error)
 	}
 }
 
