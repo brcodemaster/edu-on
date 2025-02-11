@@ -29,8 +29,7 @@ export const ParamsOfCourse: React.FC<Props> = ({
 				</span>
 			</span>
 			<span className='flex items-center gap-1'>
-				<Star width={16} height={15} />{' '}
-				{new Intl.NumberFormat('en-US', { minimumFractionDigits: 1 }).format(rating)}{' '}
+				<Star /> {new Intl.NumberFormat('en-US', { minimumFractionDigits: 1 }).format(rating)}{' '}
 				<span className='opacity-50'>({new Intl.NumberFormat('ru-Ru').format(ratingCount)})</span>
 			</span>
 			<span className='flex items-center gap-1'>

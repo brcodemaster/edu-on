@@ -49,7 +49,7 @@ export const CourseBlock: React.FC<Props> = ({
 				</div>
 				<div className='flex justify-between items-center w-4/5 pt-4'>
 					<div className='flex items-center gap-2'>
-						<Star width={16} height={15} />
+						<Star />
 						<span className='flex justify-center items-center'>
 							<p className='text-blue-primary'>
 								{new Intl.NumberFormat('en-US', { minimumFractionDigits: 1 }).format(rating)}

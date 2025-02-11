@@ -55,8 +55,7 @@ export const SpeakerBlock: React.FC<Props> = ({
 				<p className='text-gray-primary font-medium text-sm'>{company}</p>
 			</div>
 			<div className='flex gap-2 items-center text-blue-primary font-medium'>
-				<Star width={16} height={15} />{' '}
-				{new Intl.NumberFormat('en-US', { minimumFractionDigits: 1 }).format(rating)}{' '}
+				<Star /> {new Intl.NumberFormat('en-US', { minimumFractionDigits: 1 }).format(rating)}{' '}
 				<p className='text-blue-primary/50'>
 					({new Intl.NumberFormat('ru-Ru').format(ratingCount)})
 				</p>

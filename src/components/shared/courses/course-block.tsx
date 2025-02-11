@@ -1,4 +1,4 @@
-import { Certificate, Star, Time, Video } from '@/components/ui'
+import { BigStar, Certificate, Time, Video } from '@/components/ui'
 import { Button } from '@/components/ui/buttons'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
@@ -53,7 +53,7 @@ export const CourseBlock: React.FC<Props> = ({
 					<p className='text-blue-primary font-medium pt-6'>{tCourse('inCourse')}:</p>
 					<div className='grayscale'>
 						<p className='flex items-center gap-2 py-3'>
-							<Star width={24} height={24} />
+							<BigStar />
 							{tCourse('lifetime')}
 						</p>
 						<p className='flex items-center gap-2 py-3'>
